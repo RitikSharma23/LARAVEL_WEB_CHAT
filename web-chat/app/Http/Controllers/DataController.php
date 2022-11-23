@@ -40,9 +40,10 @@ class DataController extends Controller
         print_r($request->toArray());
 
         if(Auth::attempt($request->only('phone','password'))){
-            // return redirect('/loginpage');/
+            return redirect('/index');
           }else{
-            echo "not";
+            return redirect('/registerpage');
+
           }
     }
 }

@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::view('loginpage','loginpage');
 Route::view('registerpage','registerpage');
+Route::view('index','index');
 
 Route::post('register',[DataController::class,'register']);
 Route::post('login',[DataController::class,'login']);
