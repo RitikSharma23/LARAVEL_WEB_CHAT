@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,6 @@ Route::get('/', function () {
 
 Route::view('loginpage','loginpage');
 Route::view('registerpage','registerpage');
+
+Route::post('register',[DataController::class,'register']);
+Route::post('login',[DataController::class,'login']);

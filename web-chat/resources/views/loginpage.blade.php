@@ -23,18 +23,19 @@
 							<div class="col-md-12">
 								<div class="content">
 									<h1>Login</h1>
-									
+
 									<p>Use Your Phone Number To Login </p>
-									<form>
+									<form action="{{url('/')}}/login" method="post">
+                                        @csrf
 										<div class="form-group">
 											<input type="number" name="phone" class="form-control" placeholder="Phone" required>
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 										</div>
 										<div class="form-group">
-											<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+											<input type="password" name="password" class="form-control" placeholder="Password" required>
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
-										<button type="submit" class="btn button" formaction="index-2.html">Login</button>
+										<button type="submit" class="btn button" formaction="{{url('/')}}/login">Login</button>
 										<div class="callout">
 											<span>Don't have account? <a href="sign-up.html">Create Account</a></span>
 										</div>

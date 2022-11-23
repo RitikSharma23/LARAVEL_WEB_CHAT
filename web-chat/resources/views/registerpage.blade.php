@@ -24,7 +24,8 @@
 								<div class="content">
 									<h1>Create Account</h1>
 									<p>Use Your Email And Password For Registration</p>
-									<form class="signup">
+									<form class="signup" action="{{url('/')}}/register" method="post">
+                                        @csrf
 										<div class="form-parent">
 											<div class="form-group">
 												<input type="text" name="fname" class="form-control" placeholder="First Name" required>
@@ -51,7 +52,7 @@
 											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" required>
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
-										<button type="submit" class="btn button" formaction="index-2.html">Sign Up</button>
+										<button type="submit" class="btn button" formaction="{{url('/')}}/register">Sign Up</button>
 										<div class="callout">
 											<span>Already a member? <a href="sign-in.html">Sign In</a></span>
 										</div>
