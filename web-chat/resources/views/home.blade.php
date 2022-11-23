@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>THIIS IS HOME PAGE</h1>
+<h1>THIS IS HOME PAGE</h1>
     <a href="loginpage">LOGIN</a><br><br>
     <a href="registerpage">register</a><br><br>
 </body>
