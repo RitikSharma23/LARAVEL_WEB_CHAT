@@ -3,7 +3,7 @@
 
 <head>
 		<meta charset="utf-8">
-		<title>Swipe – The Simplest Chat Platform</title>
+		<title>Index</title>
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap core CSS -->
@@ -12,13 +12,12 @@
 		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
 		<!-- Favicon -->
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
-</head>
-
-<body>
-
-    <main>
+	</head>
+	<body>
+		<main>
 			<div class="layout">
-			<div class="navigation">
+				<!-- Start of Navigation -->
+				<div class="navigation">
 					<div class="container">
 						<div class="inside">
 							<div class="nav nav-tab menu">
