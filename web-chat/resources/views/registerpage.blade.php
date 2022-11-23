@@ -68,7 +68,7 @@
 					<div class="container">
 						<div class="col-md-12">
 							<div class="preference">
-								<h2>Welcome Back!</h2>
+								<h2>Welcome </h2>
 								<p>To keep connected with your friends please login with your personal info.</p>
 								<a href="{{url('/')}}/loginpage" class="btn button">Login</a>
 							</div>
