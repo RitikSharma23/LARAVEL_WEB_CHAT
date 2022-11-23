@@ -3,7 +3,7 @@
 
 <head>
 		<meta charset="utf-8">
-		<title>Sign Up – Swipe</title>
+		<title>Register</title>
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap core CSS -->
@@ -52,9 +52,9 @@
 											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" required>
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
-										<button type="submit" class="btn button" formaction="{{url('/')}}/register">Sign Up</button>
+										<button type="submit" class="btn button" formaction="{{url('/')}}/register">Register</button>
 										<div class="callout">
-											<span>Already a member? <a href="sign-in.html">Sign In</a></span>
+											<span>Already a member? <a href="{{url('/')}}/loginpage">Login</a></span>
 										</div>
 									</form>
 								</div>
@@ -70,7 +70,7 @@
 							<div class="preference">
 								<h2>Welcome Back!</h2>
 								<p>To keep connected with your friends please login with your personal info.</p>
-								<a href="sign-in.html" class="btn button">Sign In</a>
+								<a href="{{url('/')}}/loginpage" class="btn button">Login</a>
 							</div>
 						</div>
 					</div>

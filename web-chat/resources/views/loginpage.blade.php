@@ -37,7 +37,7 @@
 										</div>
 										<button type="submit" class="btn button" formaction="{{url('/')}}/login">Login</button>
 										<div class="callout">
-											<span>Don't have account? <a href="sign-up.html">Create Account</a></span>
+											<span>Don't have account? <a href="{{url('/')}}/registerpage">Create Account</a></span>
 										</div>
 									</form>
 								</div>
@@ -53,7 +53,7 @@
 							<div class="preference">
 								<h2>Hello, Friend!</h2>
 								<p>Enter your personal details and start your journey with Us today.</p>
-								<a href="register.blade.php" class="btn button">Register</a>
+								<a href="{{url('/')}}/registerpage" class="btn button">Register</a>
 							</div>
 						</div>
 					</div>
