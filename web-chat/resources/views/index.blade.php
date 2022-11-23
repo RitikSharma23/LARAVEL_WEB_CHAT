@@ -213,7 +213,7 @@
 												<!-- <div class="new bg-pink">
 													<span>+10</span>
 												</div> -->
-												<div class="data">
+												<!-- <div class="data">
 													<h5>Michael Knudsen</h5>
 													<span>Sun</span>
 													<p>How can i improve my chances of getting a deposit?</p>
@@ -256,7 +256,7 @@
 												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
 												<div class="status">
 													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
+												</div> -->
 												<div class="data">
 													<h5>Keith Morris</h5>
 													<span>Fri</span>
