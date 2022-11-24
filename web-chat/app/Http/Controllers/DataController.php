@@ -94,5 +94,8 @@ class DataController extends Controller
         return Redirect('home');
 
 
+
     }
+
+
 }

@@ -12,6 +12,7 @@
 		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
 		<!-- Favicon -->
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+        <link rel="stylesheet" href="message.css">
 	</head>
 	<body>
 		<main>
@@ -80,39 +81,11 @@
 											<input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>
-										<!-- <button class="btn create" data-toggle="modal" data-target="#startnewchat"><i class="material-icons">create</i></button> -->
 									</div>
-									<!-- <div class="list-group sort">
-										<button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
-										<button class="btn con" data-toggle="list" data-filter="read">Read</button>
-										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
-									</div>						 -->
-									<div class="discussions">
+					 
+									<div class="discussions" id="dis">
 										<h1>Chats</h1>
-										<div class="list-group" id="chats" role="tablist">
 
-											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab" style="background-color: white;border-radius:10px;margin:10px 0px 0px 0px">
-												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar" style="position:relative;left:20px">
-
-												<!-- <div class="new bg-pink">
-													<span>+10</span>
-												</div> -->
-												<div class="data" style="position: relative;top:12px;left:20px">
-													<h5>Shanu Pandey</h5>
-												</div>
-											</a>
-										</div>
-										<div class="list-group" id="chats" role="tablist">
-
-											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab" style="background-color: white;border-radius:10px;margin:10px 0px 0px 0px">
-												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar" style="position:relative;left:20px">
-
-
-												<div class="data" style="position: relative;top:12px;left:20px">
-													<h5>Vrutik Jagad</h5>
-												</div>
-											</a>
-										</div>
 									</div>
 								</div>
 								<!-- End of Discussions -->
@@ -262,7 +235,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="content empty">
+								<!-- <div class="content empty">
 									<div class="container">
 										<div class="col-md-12">
 											<div class="no-messages">
@@ -271,15 +244,25 @@
 											</div>
 										</div>
 									</div>
+								</div> -->
+                                <div class="content" id="content" >
+									<div class="container">
+										<div class="col-md-12" id="mes">
+
+
+
+										</div>
+									</div>
 								</div>
 								<div class="container">
 									<div class="col-md-12">
 										<div class="bottom">
-											<form class="position-relative w-100">
-												<textarea class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
-												<button class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
+											<div class="position-relative w-100">
+                                                <input type="text" name="" id="">
+												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
+												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
 												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-											</form>
+											</div>
 											<label>
 												<input type="file">
 												<span class="btn attach d-sm-block d-none"><i class="material-icons">attach_file</i></span>
@@ -311,6 +294,8 @@
                 alert("laskdh")
             })
 		</script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+        <script src="message.js"></script>
 	</body>
 
 </html>

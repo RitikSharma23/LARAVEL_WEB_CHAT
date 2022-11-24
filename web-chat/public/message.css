@@ -1,0 +1,16 @@
+
+.filterDiscussions{
+    background-color: white;
+    border-radius:10px;
+    margin:10px 0px 0px 0px
+}
+
+
+.avatar-md{
+    position:relative;left:20px
+}
+
+.data
+{
+    position: relative;top:12px;left:20px
+}
