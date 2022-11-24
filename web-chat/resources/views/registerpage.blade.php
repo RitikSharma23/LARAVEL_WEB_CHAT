@@ -28,29 +28,35 @@
                                         @csrf
 										<div class="form-parent">
 											<div class="form-group">
-												<input type="text" name="fname" class="form-control" placeholder="First Name" required>
+												<input type="text" name="fname" class="form-control" placeholder="First Name" value="{{old('fname')}}">
 												<button class="btn icon"><i class="material-icons">person_outline</i></button>
+												<span class="text-danger">@error('fname'){{$message}}@enderror</span>
 											</div>
 											<div class="form-group">
-												<input type="text" name="lname" class="form-control" placeholder="Last Name" required>
+												<input type="text" name="lname" class="form-control" placeholder="Last Name" value="{{old('lname')}}" >
 												<button class="btn icon"><i class="material-icons">person_outline</i></button>
+												<span class="text-danger">@error('lname'){{$message}}@enderror</span>
 											</div>
 										</div>
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" required>
+											<input type="number" name="phone" class="form-control" placeholder="Phone" value="{{old('phone')}}">
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
+											<span class="text-danger">@error('phone'){{$message}}@enderror</span>
 										</div>
 										<div class="form-group">
-											<input type="email" name="email" class="form-control" placeholder="Email" required>
+											<input type="email" name="email" class="form-control" placeholder="Email" value="{{old('email')}}">
 											<button class="btn icon"><i class="material-icons">email</i></button>
+											<span class="text-danger">@error('email'){{$message}}@enderror</span>
 										</div>
 										<div class="form-group">
-											<input type="password" name="password" class="form-control" placeholder="Password" required>
+											<input type="password" name="password" class="form-control" placeholder="Password">
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
+											<span class="text-danger">@error('password'){{$message}}@enderror</span>
 										</div>
 										<div class="form-group">
-											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" required>
+											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" >
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
+											<span class="text-danger">@error('cnf_password'){{$message}}@enderror</span>
 										</div>
 										<button type="submit" class="btn button" formaction="{{url('/')}}/register">Register</button>
 										<div class="callout">

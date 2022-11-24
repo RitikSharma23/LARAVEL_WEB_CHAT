@@ -12,14 +12,15 @@ use Illuminate\Http\Request;
 class DataController extends Controller
 {
     public function register(Request $request){
-        // $request->validate([
-        //     'fname'=>'required|alpha',
-        //     'lname'=>'required|alpha',
-        //     'email'=>'required|email',
-        //     'phone'=>'required|numeric|max_digits:10|min_digits:10',
-        //     'password'=>'required:',
-        //     'cnf_password'=>'required|same:password'
-        // ]);
+        $request->validate([
+            'fname'=>'required|alpha',
+            'lname'=>'required|alpha',
+            'email'=>'required|email',
+            'phone'=>'required|numeric|max_digits:10|min_digits:10',
+            'password'=>'required:|min:8',
+            'cnf_password'=>'required|same:password'
+        ]);
+        
 
 
         $c=new User;
@@ -38,6 +39,12 @@ class DataController extends Controller
 
     }
     public function login(Request $request){
+        $request->validate([
+           
+            'phone'=>'required|numeric|max_digits:10|min_digits:10',
+            'password'=>'required:|min:8',
+            
+        ]);
 
         $data=User::all();
 
@@ -53,7 +60,9 @@ class DataController extends Controller
         if(Auth::attempt($request->only('phone','password'))){
             return view('/index')->with(compact('final'));
           }else{
-            return redirect('/registerpage');
+            echo('The User name and password are invalid');
+            // return redirect('/registerpage');
+
           }
     }
 
