@@ -75,7 +75,10 @@ class DataController extends Controller
         $data->lname=$request['lname'];
         $data->email=$request['email'];
         $data->phone=$request['phone'];
+        if($request['password']!="" and $request['cnf_password']!=""){
         $data->password= Hash::make($request['password']);
+        }
+
         $data->save();
         return view('profile')->with(compact('data'));
         }else{
