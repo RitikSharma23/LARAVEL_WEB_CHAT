@@ -21,7 +21,7 @@
 					<div class="container">
 						<div class="inside">
 							<div class="nav nav-tab menu">
-								<button class="btn"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></button>
+								<button class="btn"><img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
 								<a href="#discussions" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
 
@@ -57,7 +57,7 @@
 										<div class="list-group" id="contacts" role="tablist">
 
 											<a href="#" class="filterMembers all online contact" data-toggle="list">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
+												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
 												<div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div>
@@ -84,7 +84,7 @@
 									</div>
 									<!-- <div class="list-group sort">
 										<button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
-										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="read">Read</button>
+										<button class="btn con" data-toggle="list" data-filter="read">Read</button>
 										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
 									</div>						 -->
 									<div class="discussions">
@@ -92,7 +92,7 @@
 										<div class="list-group" id="chats" role="tablist">
 
 											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
+												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
 												<div class="status">
 													<i class="material-icons offline">fiber_manual_record</i>
 												</div>
@@ -111,76 +111,23 @@
 								<div class="tab-pane fade" id="settings">
 									<div class="settings">
 										<div class="profile">
-											<img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar">
-											<h1><a href="#">Shanu Pandey</a></h1>
-											<span>Helena, Montana</span>
-											<!-- <div class="stats">
-												<div class="item">
-													<h2>122</h2>
-													<h3>Fellas</h3>
-												</div>
-												<div class="item">
-													<h2>305</h2>
-													<h3>Chats</h3>
-												</div>
-												<div class="item">
-													<h2>1538</h2>
-													<h3>Posts</h3>
-												</div>
-											</div> -->
+											<img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar">
+											<h1><a href="#">{{$final['fname'] }} &nbsp;  {{$final['lname']}}</a></h1>
 										</div>
 										<div class="categories" id="accordionSettings">
 											<h1>Settings</h1>
 											<!-- Start of My Account -->
-											<div class="category">
-												<a href="#" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
+											<div class="category" id="myaccount" style="border: none;">
+												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
-														<h5>My Account</h5>
-														<p>Update your profile details</p>
-													</div>
+														<h5>My Account</h5></div>
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a>
-												<div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
-													<div class="content">
-														<div class="upload">
-															<div class="data">
-																<img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="image">
-																<label>
-																	<input type="file">
-																	<span class="btn button">Upload avatar</span>
-																</label>
-															</div>
-															<p>For best results, use an image at least 256px by 256px in either .jpg or .png format!</p>
-														</div>
-														<form>
-															<div class="parent">
-																<div class="field">
-																	<label for="firstName">First name <span>*</span></label>
-																	<input type="text" class="form-control" id="firstName" placeholder="First name" value="Shanu" required>
-																</div>
-																<div class="field">
-																	<label for="lastName">Last name <span>*</span></label>
-																	<input type="text" class="form-control" id="lastName" placeholder="Last name" value="Pandey" required>
-																</div>
-															</div>
-															<div class="field">
-																<label for="email">Email <span>*</span></label>
-																<input type="email" class="form-control" id="email" placeholder="Enter your email address" value="Shanu@gmail.com" required>
-															</div>
-															<div class="field">
-																<label for="password">Password</label>
-																<input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
-															</div>
-															<div class="field">
-																<label for="location">Location</label>
-																<input type="text" class="form-control" id="location" placeholder="Enter your location" value="Helena, Montana" required>
-															</div>
-															<button class="btn btn-link w-100">Delete Account</button>
-															<button type="submit" class="btn button w-100">Apply</button>
-														</form>
-													</div>
-												</div>
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="           Update your profile details" style="background-color: #fdfdfd;border:none;color:#bdbac2"></form>
+
+
 											</div>
 											<!-- End of My Account -->
 
@@ -213,33 +160,7 @@
 												</div>
 											</div>
 											<!-- End of Appearance Settings -->
-											<!-- Start of Language -->
-											<div class="category">
-												<a href="#" class="title collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-													<i class="material-icons md-30 online">language</i>
-													<div class="data">
-														<h5>Language</h5>
-														<p>Select preferred language</p>
-													</div>
-													<i class="material-icons">keyboard_arrow_right</i>
-												</a>
-												<div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#accordionSettings">
-													<div class="content layer">
-														<div class="language">
-															<label for="country">Language</label>
-															<select class="custom-select" id="country" required>
-																<option value="">Select an language...</option>
-																<option>English, UK</option>
-																<option>English, US</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- End of Language -->
-											<!-- Start of Privacy & Safety -->
 
-											<!-- End of Privacy & Safety -->
 											<!-- Start of Logout -->
 											<div class="category">
 												<a href="sign-in.html" class="title collapsed">
@@ -248,7 +169,7 @@
 														<h5>Power Off</h5>
 														<p>Log out of your account</p>
 													</div>
-													<i class="material-icons">keyboard_arrow_right</i>
+
 												</a>
 											</div>
 											<!-- End of Logout -->
@@ -260,13 +181,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- End of Sidebar -->
-				<!-- Start of Add Friends -->
 
-				<!-- End of Add Friends -->
-				<!-- Start of Create Chat -->
-
-				<!-- End of Create Chat -->
 				<div class="main">
 					<div class="tab-content" id="nav-tabContent">
 						<!-- Start of Babble -->
@@ -341,6 +256,10 @@
 		<script>
 			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
 			scrollToBottom(document.getElementById('content'));
+
+            document.getElementById("myaccount").addEventListener("click",()=>{
+                alert("laskdh")
+            })
 		</script>
 	</body>
 

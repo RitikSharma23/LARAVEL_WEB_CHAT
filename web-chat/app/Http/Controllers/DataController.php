@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+
 
 class DataController extends Controller
 {
@@ -36,14 +38,58 @@ class DataController extends Controller
 
     }
     public function login(Request $request){
-        echo "<pre>";
-        print_r($request->toArray());
+
+        $data=User::all();
+
+        // echo "<pre>";
+        // print_r($data->toArray());
+
+        foreach ($data as $d){
+            if($d['phone']==$request['phone']){
+                $final=User::find($d['id']);break;
+            }
+        }
 
         if(Auth::attempt($request->only('phone','password'))){
-            return redirect('/index');
+            return view('/index')->with(compact('final'));
           }else{
             return redirect('/registerpage');
-
           }
+    }
+
+    public function prof(Request $request){
+        if(Auth::check()){
+            $d=User::find($request);
+        $data=$d[0];
+        return view('profile')->with(compact('data'));
+        }else{
+            return redirect('/loginpage');
+        }
+
+    }
+
+    public function doupdate(Request $request){
+        if(Auth::check()){
+            $data=User::find($request['id']);
+        $data->fname=$request['fname'];
+        $data->lname=$request['lname'];
+        $data->email=$request['email'];
+        $data->phone=$request['phone'];
+        $data->password= Hash::make($request['password']);
+        $data->save();
+        return view('profile')->with(compact('data'));
+        }else{
+            return redirect('/loginpage');
+        }
+
+    }
+
+    public function log() {
+        // Session::flush();
+        Auth::logout();
+
+        return Redirect('home');
+
+
     }
 }
