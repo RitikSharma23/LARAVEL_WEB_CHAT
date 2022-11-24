@@ -28,12 +28,14 @@
 									<form action="{{url('/')}}/login" method="post">
                                         @csrf
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" required>
+											<input type="number" name="phone" class="form-control" placeholder="Phone" value="{{old('phone')}}">
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
+											<span class="text-danger">@error('phone'){{$message}}@enderror</span>
 										</div>
 										<div class="form-group">
-											<input type="password" name="password" class="form-control" placeholder="Password" required>
+											<input type="password" name="password" class="form-control" placeholder="Password"  >
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
+											<span class="text-danger">@error('password'){{$message}}@enderror</span>
 										</div>
 										<button type="submit" class="btn button" formaction="{{url('/')}}/login">Login</button>
 										<div class="callout">
