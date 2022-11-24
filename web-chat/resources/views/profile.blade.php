@@ -23,7 +23,7 @@
 							<div class="nav nav-tab menu">
 								<button class="btn"><img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
-								<a href="#discussions" data-toggle="tab" class="active"><i class="material-icons active">arrow_back</i></a>
+								<a onclick="history.back()" data-toggle="tab" class="active"><i class="material-icons active" style="cursor: pointer;">arrow_back</i></a>
 								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
 							</div>
 						</div>
