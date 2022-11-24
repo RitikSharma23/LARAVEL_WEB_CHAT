@@ -233,7 +233,7 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-mzle-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
 												<div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div>
