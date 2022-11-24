@@ -34,7 +34,7 @@
 				</div>
 				<!-- End of Navigation -->
 				<!-- Start of Sidebar -->
-				<div class="sidebar" id="sidebar">
+				<div class="sidebar" id="sidebar" style="border:1px solid grey;">
 					<div class="container">
 						<div class="col-md-12">
 							<div class="tab-content">
@@ -91,16 +91,25 @@
 										<h1>Chats</h1>
 										<div class="list-group" id="chats" role="tablist">
 
-											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
+											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab" style="background-color: white;border-radius:10px;margin:10px 0px 0px 0px">
+												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar" style="position:relative;left:20px">
+
 												<!-- <div class="new bg-pink">
 													<span>+10</span>
 												</div> -->
-												<div class="data">
+												<div class="data" style="position: relative;top:12px;left:20px">
 													<h5>Shanu Pandey</h5>
+												</div>
+											</a>
+										</div>
+										<div class="list-group" id="chats" role="tablist">
+
+											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab" style="background-color: white;border-radius:10px;margin:10px 0px 0px 0px">
+												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar" style="position:relative;left:20px">
+
+
+												<div class="data" style="position: relative;top:12px;left:20px">
+													<h5>Vrutik Jagad</h5>
 												</div>
 											</a>
 										</div>
@@ -125,7 +134,7 @@
 														<h5>My Account</h5></div>
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a>
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="           Update your profile details" style="background-color: #fdfdfd;border:none;color:#bdbac2"></form>
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="           Update your profile details" style="background-color: #f6f6f6;border:none;color:#bdbac2"></form>
 
 
 
