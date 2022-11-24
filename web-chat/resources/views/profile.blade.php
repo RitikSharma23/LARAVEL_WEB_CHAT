@@ -68,7 +68,7 @@
 											<button class="btn icon"><i class="material-icons">email</i></button>
 										</div>
 										<div class="form-group">
-											<input type="password" name="password" class="form-control" placeholder="Password" value="" required>
+											<input type="password" name="password" class="form-control" placeholder="Password" value="" >
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
 										<div class="form-group">

@@ -80,7 +80,7 @@
 											<input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>
-										<button class="btn create" data-toggle="modal" data-target="#startnewchat"><i class="material-icons">create</i></button>
+										<!-- <button class="btn create" data-toggle="modal" data-target="#startnewchat"><i class="material-icons">create</i></button> -->
 									</div>
 									<!-- <div class="list-group sort">
 										<button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
@@ -88,7 +88,7 @@
 										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
 									</div>						 -->
 									<div class="discussions">
-										<h1>Discussions</h1>
+										<h1>Chats</h1>
 										<div class="list-group" id="chats" role="tablist">
 
 											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
@@ -112,7 +112,7 @@
 									<div class="settings">
 										<div class="profile">
 											<img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar">
-											<h1><a href="#">{{$final['fname'] }} &nbsp;  {{$final['lname']}}</a></h1>
+											<h1><a href="#">{{$final['fname'] }} {{$final['lname']}}</a></h1>
 										</div>
 										<div class="categories" id="accordionSettings">
 											<h1>Settings</h1>
@@ -129,7 +129,7 @@
 
 
 
-												<div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
+												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
 													<div class="content">
 														<div class="upload">
 															<div class="data">
