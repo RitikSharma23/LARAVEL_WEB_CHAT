@@ -49,29 +49,9 @@
 										<button class="btn create" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">person_add</i></button>
 									</div>
 									<div class="list-group sort">
-										<!-- <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button> -->
-										<!-- <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
-										<button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button> -->
-									</div>
-									<div class="contacts">
-										<h1>Contacts</h1>
-										<div class="list-group" id="contacts" role="tablist">
 
-											<a href="#" class="filterMembers all online contact" data-toggle="list">
-												<img class="avatar-md" src="dist/img/avatars/profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar">
-												<div class="status">
-													<i class="material-icons online">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Shanu Pandey</h5>
-													<p>Washington, USA</p>
-												</div>
-												<div class="person-add">
-													<i class="material-icons">person</i>
-												</div>
-											</a>
-										</div>
 									</div>
+
 								</div>
 								<!-- End of Contacts -->
 								<!-- Start of Discussions -->
@@ -82,7 +62,7 @@
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>
 									</div>
-					 
+
 									<div class="discussions" id="dis">
 										<h1>Chats</h1>
 
@@ -112,44 +92,7 @@
 
 
 												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
-													<div class="content">
-														<div class="upload">
-															<div class="data">
-																<img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="image">
-																<label>
-																	<input type="file">
-																	<span class="btn button">Upload avatar</span>
-																</label>
-															</div>
-															<p>For best results, use an image at least 256px by 256px in either .jpg or .png format!</p>
-														</div>
-														<form>
-															<div class="parent">
-																<div class="field">
-																	<label for="firstName">First name <span>*</span></label>
-																	<input type="text" class="form-control" id="firstName" placeholder="First name" value="Shanu" required>
-																</div>
-																<div class="field">
-																	<label for="lastName">Last name <span>*</span></label>
-																	<input type="text" class="form-control" id="lastName" placeholder="Last name" value="Pandey" required>
-																</div>
-															</div>
-															<div class="field">
-																<label for="email">Email <span>*</span></label>
-																<input type="email" class="form-control" id="email" placeholder="Enter your email address" value="Shanu@gmail.com" required>
-															</div>
-															<div class="field">
-																<label for="password">Password</label>
-																<input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
-															</div>
-															<div class="field">
-																<label for="location">Location</label>
-																<input type="text" class="form-control" id="location" placeholder="Enter your location" value="Helena, Montana" required>
-															</div>
-															<button class="btn btn-link w-100">Delete Account</button>
-															<button type="submit" class="btn button w-100">Apply</button>
-														</form>
-													</div>
+
 												</div>
 											</div>
 											<!-- End of My Account -->
@@ -182,6 +125,35 @@
 													</div>
 												</div>
 											</div>
+
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="requests">
+							<div class="title">
+								<h1>Add your friends</h1>
+								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+							</div>
+							<div class="content">
+								<form>
+									<div class="form-group">
+										<label for="user">Username:</label>
+										<input type="text" class="form-control" id="user" placeholder="Add recipient..." required>
+										<div class="user" id="contact">
+											<img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
+											<h5>Keith Morris</h5>
+											<button class="btn"><i class="material-icons">close</i></button>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="welcome">Message:</label>
+										<textarea class="text-control" id="welcome" placeholder="Send your welcome message...">Hi Keith, I'd like to add you as a contact.</textarea>
+									</div>
+									<button type="submit" class="btn button w-100">Send Friend Request</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 											<!-- End of Appearance Settings -->
 
 											<!-- Start of Logout -->
@@ -235,16 +207,7 @@
 										</div>
 									</div>
 								</div>
-								<!-- <div class="content empty">
-									<div class="container">
-										<div class="col-md-12">
-											<div class="no-messages">
-												<i class="material-icons md-48">forum</i>
-												<p>Seems people are shy to start the chat. Break the ice send the first message.</p>
-											</div>
-										</div>
-									</div>
-								</div> -->
+
                                 <div class="content" id="content" >
 									<div class="container">
 										<div class="col-md-12" id="mes">
@@ -291,7 +254,7 @@
 			scrollToBottom(document.getElementById('content'));
 
             document.getElementById("myaccount").addEventListener("click",()=>{
-                alert("laskdh")
+                // alert("laskdh")
             })
 		</script>
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>

@@ -153,6 +153,9 @@ function dischat(me,user){
             messageyou(childData,tt)
           }
 
+          var objDiv = document.getElementById("content");
+          objDiv.scrollTop = objDiv.scrollHeight;
+
 
         });
       });

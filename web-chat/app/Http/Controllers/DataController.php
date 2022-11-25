@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserData;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +21,7 @@ class DataController extends Controller
             'password'=>'required:|min:8',
             'cnf_password'=>'required|same:password'
         ]);
-        
+
 
 
         $c=new User;
@@ -31,6 +32,13 @@ class DataController extends Controller
         $c->password=Hash::make($request['password']);
         $c->save();
 
+        $u=new UserData;
+        $u->phone=$request['phone'];
+        $u->fname=$request['fname'];
+        $u->lname=$request['lname'];
+        $u->email=$request['email'];
+        $u->save();
+
           if(Auth::attempt($request->only('email','password'))){
             return redirect('/loginpage');
           }else{
@@ -40,16 +48,13 @@ class DataController extends Controller
     }
     public function login(Request $request){
         $request->validate([
-           
+
             'phone'=>'required|numeric|max_digits:10|min_digits:10',
             'password'=>'required:|min:8',
-            
+
         ]);
 
         $data=User::all();
-
-        // echo "<pre>";
-        // print_r($data->toArray());
 
         foreach ($data as $d){
             if($d['phone']==$request['phone']){
