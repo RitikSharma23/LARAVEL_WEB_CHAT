@@ -91,7 +91,7 @@ function timeconvert(timeEpoch, offset){
 }
 
 
-me="vrutik"
+me="ritik"
 // user="shanu"
 
 const firebaseConfig = {
@@ -152,6 +152,9 @@ function dischat(me,user){
             tt=timeconvert(parseInt(childKey.slice(0,13)),+5.50)
             messageyou(childData,tt)
           }
+
+          var objDiv = document.getElementById("content");
+          objDiv.scrollTop = objDiv.scrollHeight;
 
 
         });
