@@ -54,7 +54,9 @@ function usercreate(name){
     var x=name.split('@')
     nam=x[1]
     phone=x[0]
-    image=x[2].replace('_','.')
+    try{
+        image=x[2].replace('_','.')
+    }catch{}
     var a=document.createElement('a')
     a.classList.add('filterDiscussions','all','unread','single')
     a.id="list-empty-list"
@@ -95,9 +97,13 @@ function timeconvert(timeEpoch, offset){
 }
 
 
-// document.getElementById('udetail').innerHTML;
-me="ritik"
-user="shanu"
+me=document.getElementById('udetail').innerHTML;
+me=me.replace(".","_")
+// user="8866892314@Ritik Sharma@profile_png"
+// me="112231212@Shanu_pandey@profile_png"
+// me="ritik"
+// user="shanu"
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCtjg8Ziqkzk5ixe1kDQ9VmKkJKO4FFAbE",
@@ -122,6 +128,9 @@ const firebaseConfig = {
 
   })
 
+// firebase.database().ref(me+'/').set("")
+
+
 
   var delayInMilliseconds = 3000;
 
@@ -130,6 +139,14 @@ setTimeout(function() {
 
 
 function dischat(me,user){
+    var x=user.split('@')
+    nam=x[1]
+    phone=x[0]
+    try{
+        image=x[2].replace('_','.')
+    }catch{}
+
+    document.getElementById('liveuser').innerHTML=nam
 
       firebase.database().ref(me+'/'+user+'/me/').on('value',function(snapshot) {
       document.getElementById("mes").innerHTML=""
@@ -165,32 +182,39 @@ function dischat(me,user){
 
 
 
+
     var elements = document.getElementsByClassName("profile");
     firstuser=elements[0].getAttribute("id");
-    dischat(me,firstuser)
-    user=firstuser;
+    if(firstuser==null){firstuser=user}else{dischat(me,firstuser);user=firstuser;}
+    dischat(me,user)
+
 
 
 
     var myFunction = function() {
         var attribute = this.getAttribute("id");
-        dischat(me,attribute)
+        if(firstuser!=null){
+            dischat(me,attribute)
+            console.log(attribute)
+        }
+
         user=attribute
     };
 
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click', myFunction, false);
+        console.log(elements)
     }
 
 }, delayInMilliseconds);
 
 
-
+const d = new Date();
+    var tim=d.getTime();
 
 document.getElementById("send2").addEventListener("click",abcd);
 function abcd(){
-    const d = new Date();
-    var tim=d.getTime();
+
 
     var z=document.getElementById("text2").value;
 
@@ -217,3 +241,67 @@ function abcd(){
 
 $("#send2").click(function() {
 });
+
+
+
+  document.getElementById('person').addEventListener("click",()=>{
+        document.getElementById("addbox").style.zIndex="3"
+        document.getElementById('mainclass').style.filter="blur(4px)";
+  })
+  document.getElementById('close').addEventListener("click",()=>{
+        document.getElementById("addbox").style.zIndex="-3"
+        document.getElementById('mainclass').style.filter="blur(0px)";
+  })
+
+ m=0;
+ firebase.database().ref('/').once('value',function(snapshot) {
+    snapshot.forEach(function(childSnapshot){
+      var childKey = childSnapshot.key;
+      var childData = childSnapshot.val();
+      if(me==childKey){m=1}
+
+    });
+    if(m==1){}else{firebase.database().ref(me+'/').set("")}
+  })
+
+function newuser(newuser,message){
+    f=0;
+    a="";b=""
+
+
+    firebase.database().ref('/').once('value',function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
+          var childKey = childSnapshot.key;
+          var childData = childSnapshot.val();
+          var x=childKey.split('@')
+          phone=x[0]
+
+          if(me==childKey){m=1}
+          if(newuser==phone){f=1;a=childKey}
+
+        });
+
+        if(f==0){
+        document.getElementById("error").innerHTML="Sorry! User Not Found"
+        }else{
+            firebase.database().ref(me+'/'+a+'/me/'+tim+"R").set(message);
+            firebase.database().ref(a+'/'+me+'/me/'+tim+"L").set(message);
+            document.getElementById("success").innerHTML="Message Sent Successfully..."
+            setTimeout(function() { location.reload() },2000 );
+        }
+        if(m==1){}else{firebase.database().ref(me+'/').set("")}
+
+      })
+}
+
+
+document.getElementById("find").addEventListener("click",()=>{
+newuser(document.getElementById("usernum").value,document.getElementById("usermess").value)
+
+})
+
+document.getElementById("usernum").addEventListener("focus",()=>{
+    document.getElementById("error").innerHTML=""
+})
+
+
