@@ -51,6 +51,10 @@ function messageme(word,time){
 }
 
 function usercreate(name){
+    var x=name.split('@')
+    nam=x[1]
+    phone=x[0]
+    image=x[2].replace('_','.')
     var a=document.createElement('a')
     a.classList.add('filterDiscussions','all','unread','single')
     a.id="list-empty-list"
@@ -62,7 +66,7 @@ function usercreate(name){
     img.alt="avatar"
 
     var h=document.createElement('h5')
-    h.innerHTML=name
+    h.innerHTML=nam
 
     var div=document.createElement('div')
     div.classList.add('data')
@@ -91,8 +95,9 @@ function timeconvert(timeEpoch, offset){
 }
 
 
+// document.getElementById('udetail').innerHTML;
 me="ritik"
-// user="shanu"
+user="shanu"
 
 const firebaseConfig = {
     apiKey: "AIzaSyCtjg8Ziqkzk5ixe1kDQ9VmKkJKO4FFAbE",
@@ -110,11 +115,8 @@ const firebaseConfig = {
   firebase.database().ref(me+'/').once('value',function(snapshot) {
 
     snapshot.forEach(function(childSnapshot){
-
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
-
-
       usercreate(childKey)
     });
 

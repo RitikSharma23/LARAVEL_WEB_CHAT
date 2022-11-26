@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="message.css">
 	</head>
 	<body>
+
 		<main>
 			<div class="layout">
 				<!-- Start of Navigation -->
