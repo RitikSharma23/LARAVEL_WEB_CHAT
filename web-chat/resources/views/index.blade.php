@@ -246,7 +246,7 @@
 		</main>
 
 
-        <div class="addfriend" id="addbox" >
+        <!-- <div class="addfriend" id="addbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
@@ -268,7 +268,29 @@
 							</div>
 						</div>
 					</div>
+				</div> -->
+
+							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
+				    <div class="addfriend" id="addbox" > 
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="requests">
+							<div class="title">
+								<h1>Give your feedback</h1>
+								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
+							</div>
+							<div class="content out">
+									
+									<div class="form-group">
+										<label for="welcome">Feedback:</label>
+										<textarea class="text-control" id="usermess" placeholder="Suggest Us..."></textarea>
+									</div>
+									<button id="find" type="submit" class="btn button w-100">Send Feedback</button>
+							</div>
+						</div>
+					</div>
 				</div>
+				
+				<!-- feedback ends !!!!!!!!!-->
 
 		<!-- Bootstrap/Swipe core JavaScript
 		================================================== -->
