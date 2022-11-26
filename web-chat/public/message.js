@@ -91,7 +91,7 @@ function timeconvert(timeEpoch, offset){
 }
 
 
-me="shanu"
+me="ritik"
 // user="shanu"
 
 const firebaseConfig = {
@@ -172,7 +172,6 @@ function dischat(me,user){
 
     var myFunction = function() {
         var attribute = this.getAttribute("id");
-    //     // document.getElementById("mes").innerHTML=""
         dischat(me,attribute)
         user=attribute
     };
