@@ -32,12 +32,7 @@ class DataController extends Controller
         $c->password=Hash::make($request['password']);
         $c->save();
 
-        $u=new UserData;
-        $u->phone=$request['phone'];
-        $u->fname=$request['fname'];
-        $u->lname=$request['lname'];
-        $u->email=$request['email'];
-        $u->save();
+    
 
           if(Auth::attempt($request->only('email','password'))){
             return redirect('/loginpage');
