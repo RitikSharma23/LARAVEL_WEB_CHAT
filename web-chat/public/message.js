@@ -221,14 +221,18 @@ var tim=d.getTime();
 
     var z=document.getElementById("text2").value;
 
-    if(z==null){
-
+    if(z==""){
+        console.log(document.getElementById("text2").rows)
     }else{
+        console.log(z)
+        console.log(document.getElementById("text2").rows)
+
+
 
     firebase.database().ref(me+'/'+user+'/me/'+tim+"R").set(z);
     firebase.database().ref(user+'/'+me+'/me/'+tim+"L").set(z);
 
-    document.getElementById("text2").value=null
+    document.getElementById("text2").value=""
 
     var objDiv = document.getElementById("content");
     objDiv.scrollTop = objDiv.scrollHeight;
@@ -237,9 +241,25 @@ var tim=d.getTime();
   }
 
   $("#text2").keypress(function(event) {
+
     if (event.keyCode === 13) {
         $("#send2").click();
+        var z=document.getElementById("text2").value;
+
+        if(z==""){
+
+        }else{
+
+        firebase.database().ref(me+'/'+user+'/me/'+tim+"R").set(z);
+        firebase.database().ref(user+'/'+me+'/me/'+tim+"L").set(z);
+
+        document.getElementById("text2").value=null
+
+        var objDiv = document.getElementById("content");
+        objDiv.scrollTop = objDiv.scrollHeight;
+        }
     }
+
 });
 
 $("#send2").click(function() {
