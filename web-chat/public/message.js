@@ -215,6 +215,9 @@ const d = new Date();
 document.getElementById("send2").addEventListener("click",abcd);
 function abcd(){
 
+const d = new Date();
+var tim=d.getTime();
+
 
     var z=document.getElementById("text2").value;
 
@@ -263,6 +266,8 @@ $("#send2").click(function() {
     });
     if(m==1){}else{firebase.database().ref(me+'/').set("")}
   })
+
+
 
 function newuser(newuser,message){
     f=0;
