@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-
+Route::get('/adminlogin', function () {
+    return view('adminlogin');
+});
 Route::view('loginpage','loginpage');
 Route::view('registerpage','registerpage');
 Route::view('index','index');
