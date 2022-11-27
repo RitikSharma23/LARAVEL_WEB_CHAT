@@ -100,7 +100,7 @@ function timeconvert(timeEpoch, offset){
 me=document.getElementById('udetail').innerHTML;
 me=me.replace(".","_")
 // user="8866892314@Ritik Sharma@profile_png"
-// me="112231212@Shanu_pandey@profile_png"
+// me="112231212@Vrutik Jagad@profile_png"
 // me="ritik"
 // user="shanu"
 
@@ -118,15 +118,27 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
-  firebase.database().ref(me+'/').once('value',function(snapshot) {
 
-    snapshot.forEach(function(childSnapshot){
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-      usercreate(childKey)
-    });
 
-  })
+    firebase.database().ref(me+'/').once('value',function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
+
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+
+        usercreate(childKey)
+
+        });
+
+      })
+
+
+
+
+
+
+
+
 
 // firebase.database().ref(me+'/').set("")
 
@@ -150,6 +162,7 @@ function dischat(me,user){
 
       firebase.database().ref(me+'/'+user+'/me/').on('value',function(snapshot) {
       document.getElementById("mes").innerHTML=""
+
 
         snapshot.forEach(function(childSnapshot){
 
@@ -176,7 +189,10 @@ function dischat(me,user){
           objDiv.scrollTop = objDiv.scrollHeight;
 
 
+
+
         });
+
       });
 }
 
@@ -193,6 +209,7 @@ function dischat(me,user){
 
     var myFunction = function() {
         var attribute = this.getAttribute("id");
+
         if(firstuser!=null){
             dischat(me,attribute)
             console.log(attribute)
@@ -204,7 +221,9 @@ function dischat(me,user){
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click', myFunction, false);
         console.log(elements)
+
     }
+
 
 }, delayInMilliseconds);
 
@@ -262,11 +281,24 @@ var tim=d.getTime();
 
 });
 
+
+m=0;
+firebase.database().ref('/').once('value',function(snapshot) {
+   snapshot.forEach(function(childSnapshot){
+     var childKey = childSnapshot.key;
+     var childData = childSnapshot.val();
+     if(me==childKey){m=1}
+
+   });
+   if(m==1){}else{firebase.database().ref(me+'/').set("")}
+ })
+
+
 $("#send2").click(function() {
 });
 
 
-
+// add user
   document.getElementById('person').addEventListener("click",()=>{
         document.getElementById("addbox").style.zIndex="3"
         document.getElementById('mainclass').style.filter="blur(4px)";
@@ -276,16 +308,9 @@ $("#send2").click(function() {
         document.getElementById('mainclass').style.filter="blur(0px)";
   })
 
- m=0;
- firebase.database().ref('/').once('value',function(snapshot) {
-    snapshot.forEach(function(childSnapshot){
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-      if(me==childKey){m=1}
 
-    });
-    if(m==1){}else{firebase.database().ref(me+'/').set("")}
-  })
+//   create self new user
+
 
 
 
@@ -327,6 +352,11 @@ newuser(document.getElementById("usernum").value,document.getElementById("userme
 
 document.getElementById("usernum").addEventListener("focus",()=>{
     document.getElementById("error").innerHTML=""
+})
+
+
+document.getElementById("findfeed").addEventListener("click",()=>{
+console.log(document.getElementById('findfeedd').value)
 })
 
 

@@ -26,9 +26,20 @@ Route::get('/home', function () {
 Route::view('loginpage','loginpage');
 Route::view('registerpage','registerpage');
 Route::view('index','index');
+Route::view('password','password');
 Route::post('profile',[DataController::class,'prof']);
 
 Route::post('register',[DataController::class,'register']);
 Route::post('login',[DataController::class,'login']);
 Route::post('doupdate',[DataController::class,'doupdate']);
 Route::get('sign-in.html',[DataController::class,'log'])->name('sign-in.html');
+
+Route::post('feedback',[DataController::class,'feedback']);
+Route::get('admin',[DataController::class,'adminpanel']);
+Route::post('feeddelete',[DataController::class,'feeddelete']);
+Route::post('block',[DataController::class,'block']);
+Route::post('unblock',[DataController::class,'unblock']);
+
+Route::post('find',[DataController::class,'find']);
+Route::post('resetpass',[DataController::class,'resetpass']);
+

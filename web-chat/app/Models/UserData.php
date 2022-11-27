@@ -9,5 +9,5 @@ class UserData extends Model
 {
     use HasFactory;
     protected $table='user_data';
-    protected $primaryKey='phone';
+    protected $primaryKey='id';
 }
