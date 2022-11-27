@@ -246,7 +246,7 @@
 		</main>
 
 
-        <!-- <div class="addfriend" id="addbox" >
+        <div class="addfriend" id="addbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
@@ -268,10 +268,10 @@
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <div class="addfriend" id="addbox" > 
+				    <!-- <div class="addfriend" id="addbox" > 
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
@@ -288,7 +288,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				
 				<!-- feedback ends !!!!!!!!!-->
 
