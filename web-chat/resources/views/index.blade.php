@@ -190,12 +190,12 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="" alt="avatar"></a>
 												<div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div>
 												<div class="data">
-													<h5><a href="#" id="liveuser">Shanu Pandey</a></h5>
+													<h5><a href="#" id="liveuser"></a></h5>
 													<span>Active now</span>
 												</div>
 												<div class="dropdown">
@@ -204,7 +204,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
+														<!-- <button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button> -->
 													</div>
 												</div>
 											</div>
