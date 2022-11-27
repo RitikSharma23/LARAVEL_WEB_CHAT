@@ -204,6 +204,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
+														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
 													</div>
 												</div>
 											</div>
@@ -268,10 +269,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <!-- <div class="addfriend" id="addbox" > 
+				    <div class="addfriend" id="addbox" > 
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
@@ -279,16 +280,21 @@
 								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
 							</div>
 							<div class="content out">
-									
-									<div class="form-group">
+                                    <form action="{{url('/')}}/feedback" method="post">@csrf
+                                        <div class="form-group">
 										<label for="welcome">Feedback:</label>
-										<textarea class="text-control" id="usermess" placeholder="Suggest Us..."></textarea>
+                                        <input type="text" name="phone" value="{{$final['phone']}}" style="display:none">
+                                        <input type="text" name="name" value="{{$final['fname'].' '.$final['lname']}}" style="display:none">
+                                        <input type="text" name="email" value="{{$final['email']}}" style="display:none">
+										<textarea class="text-control" id="userfeed" name="complaint" placeholder="Suggest Us..."></textarea>
 									</div>
-									<button id="find" type="submit" class="btn button w-100">Send Feedback</button>
+									<button id="findfeed" type="submit" class="btn button w-100">Send Feedback</button>
+                                    </form>
+
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 				
 				<!-- feedback ends !!!!!!!!!-->
 
@@ -313,6 +319,13 @@
 
         <style>
             .addfriend{
+                position: absolute;
+                top: 0px;
+                left: 700px;
+                z-index: -3;
+                transition: 1s;
+            }
+            .feedback{
                 position: absolute;
                 top: 0px;
                 left: 700px;
