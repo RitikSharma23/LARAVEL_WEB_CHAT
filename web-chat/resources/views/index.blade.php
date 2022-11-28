@@ -219,7 +219,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-														<!-- <button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button> -->
+														
 													</div>
 												</div>
 											</div>
