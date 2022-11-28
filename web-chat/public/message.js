@@ -51,6 +51,12 @@ function messageme(word,time){
 }
 
 function usercreate(name){
+    var x=name.split('@')
+    nam=x[1]
+    phone=x[0]
+    try{
+        image=x[2].replace('_','.')
+    }catch{}
     var a=document.createElement('a')
     a.classList.add('filterDiscussions','all','unread','single')
     a.id="list-empty-list"
@@ -62,7 +68,7 @@ function usercreate(name){
     img.alt="avatar"
 
     var h=document.createElement('h5')
-    h.innerHTML=name
+    h.innerHTML=nam
 
     var div=document.createElement('div')
     div.classList.add('data')
@@ -91,8 +97,13 @@ function timeconvert(timeEpoch, offset){
 }
 
 
-me="ritik"
+me=document.getElementById('udetail').innerHTML;
+me=me.replace(".","_")
+// user="8866892314@Ritik Sharma@profile_png"
+// me="112231212@Vrutik Jagad@profile_png"
+// me="ritik"
 // user="shanu"
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCtjg8Ziqkzk5ixe1kDQ9VmKkJKO4FFAbE",
@@ -107,18 +118,30 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
-  firebase.database().ref(me+'/').once('value',function(snapshot) {
-
-    snapshot.forEach(function(childSnapshot){
-
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
 
 
-      usercreate(childKey)
-    });
+    firebase.database().ref(me+'/').once('value',function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
 
-  })
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+
+        usercreate(childKey)
+
+        });
+
+      })
+
+
+
+
+
+
+
+
+
+// firebase.database().ref(me+'/').set("")
+
 
 
   var delayInMilliseconds = 3000;
@@ -128,9 +151,18 @@ setTimeout(function() {
 
 
 function dischat(me,user){
+    var x=user.split('@')
+    nam=x[1]
+    phone=x[0]
+    try{
+        image=x[2].replace('_','.')
+    }catch{}
+
+    document.getElementById('liveuser').innerHTML=nam
 
       firebase.database().ref(me+'/'+user+'/me/').on('value',function(snapshot) {
       document.getElementById("mes").innerHTML=""
+
 
         snapshot.forEach(function(childSnapshot){
 
@@ -157,49 +189,69 @@ function dischat(me,user){
           objDiv.scrollTop = objDiv.scrollHeight;
 
 
+
+
         });
+
       });
 }
 
 
 
+
     var elements = document.getElementsByClassName("profile");
     firstuser=elements[0].getAttribute("id");
-    dischat(me,firstuser)
-    user=firstuser;
+    if(firstuser==null){firstuser=user}else{dischat(me,firstuser);user=firstuser;}
+    dischat(me,user)
+
 
 
 
     var myFunction = function() {
         var attribute = this.getAttribute("id");
-        dischat(me,attribute)
+
+        if(firstuser!=null){
+            dischat(me,attribute)
+            console.log(attribute)
+        }
+
         user=attribute
     };
 
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click', myFunction, false);
+        console.log(elements)
+
     }
+
 
 }, delayInMilliseconds);
 
 
-
+const d = new Date();
+    var tim=d.getTime();
 
 document.getElementById("send2").addEventListener("click",abcd);
 function abcd(){
-    const d = new Date();
-    var tim=d.getTime();
+
+const d = new Date();
+var tim=d.getTime();
+
 
     var z=document.getElementById("text2").value;
 
-    if(z==null){
-
+    if(z==""){
+        console.log(document.getElementById("text2").rows)
     }else{
+        console.log(z)
+        console.log(document.getElementById("text2").rows)
+
+
 
     firebase.database().ref(me+'/'+user+'/me/'+tim+"R").set(z);
     firebase.database().ref(user+'/'+me+'/me/'+tim+"L").set(z);
 
-    document.getElementById("text2").value=null
+    document.getElementById("text2").value=""
 
     var objDiv = document.getElementById("content");
     objDiv.scrollTop = objDiv.scrollHeight;
@@ -208,10 +260,103 @@ function abcd(){
   }
 
   $("#text2").keypress(function(event) {
+
     if (event.keyCode === 13) {
         $("#send2").click();
+        var z=document.getElementById("text2").value;
+
+        if(z==""){
+
+        }else{
+
+        firebase.database().ref(me+'/'+user+'/me/'+tim+"R").set(z);
+        firebase.database().ref(user+'/'+me+'/me/'+tim+"L").set(z);
+
+        document.getElementById("text2").value=null
+
+        var objDiv = document.getElementById("content");
+        objDiv.scrollTop = objDiv.scrollHeight;
+        }
     }
+
 });
+
+
+m=0;
+firebase.database().ref('/').once('value',function(snapshot) {
+   snapshot.forEach(function(childSnapshot){
+     var childKey = childSnapshot.key;
+     var childData = childSnapshot.val();
+     if(me==childKey){m=1}
+
+   });
+   if(m==1){}else{firebase.database().ref(me+'/').set("")}
+ })
+
 
 $("#send2").click(function() {
 });
+
+
+// add user
+  document.getElementById('person').addEventListener("click",()=>{
+        document.getElementById("addbox").style.zIndex="3"
+        document.getElementById('mainclass').style.filter="blur(4px)";
+  })
+  document.getElementById('close').addEventListener("click",()=>{
+        document.getElementById("addbox").style.zIndex="-3"
+        document.getElementById('mainclass').style.filter="blur(0px)";
+  })
+
+
+//   create self new user
+
+
+
+
+function newuser(newuser,message){
+    f=0;
+    a="";b=""
+
+
+    firebase.database().ref('/').once('value',function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
+          var childKey = childSnapshot.key;
+          var childData = childSnapshot.val();
+          var x=childKey.split('@')
+          phone=x[0]
+
+          if(me==childKey){m=1}
+          if(newuser==phone){f=1;a=childKey}
+
+        });
+
+        if(f==0){
+        document.getElementById("error").innerHTML="Sorry! User Not Found"
+        }else{
+            firebase.database().ref(me+'/'+a+'/me/'+tim+"R").set(message);
+            firebase.database().ref(a+'/'+me+'/me/'+tim+"L").set(message);
+            document.getElementById("success").innerHTML="Message Sent Successfully..."
+            setTimeout(function() { location.reload() },2000 );
+        }
+        if(m==1){}else{firebase.database().ref(me+'/').set("")}
+
+      })
+}
+
+
+document.getElementById("find").addEventListener("click",()=>{
+newuser(document.getElementById("usernum").value,document.getElementById("usermess").value)
+
+})
+
+document.getElementById("usernum").addEventListener("focus",()=>{
+    document.getElementById("error").innerHTML=""
+})
+
+
+document.getElementById("findfeed").addEventListener("click",()=>{
+console.log(document.getElementById('findfeedd').value)
+})
+
+

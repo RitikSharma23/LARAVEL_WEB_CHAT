@@ -15,7 +15,9 @@
         <link rel="stylesheet" href="message.css">
 	</head>
 	<body>
-		<main>
+    <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['img']}}</div>
+
+		<main id="mainclass">
 			<div class="layout">
 				<!-- Start of Navigation -->
 				<div class="navigation">
@@ -28,6 +30,7 @@
 
 
 								<a href="#settings" data-toggle="tab"><i class="material-icons">settings</i></a>
+                                <a href="" data-toggle="tab" ><i id="person" class="material-icons">person_add</i></a>
 								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
 							</div>
 						</div>
@@ -187,12 +190,12 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="" alt="avatar"></a>
 												<div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div>
 												<div class="data">
-													<h5><a href="#">Shanu Pandey</a></h5>
+													<h5><a href="#" id="liveuser"></a></h5>
 													<span>Active now</span>
 												</div>
 												<div class="dropdown">
@@ -201,6 +204,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
+														<!-- <button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button> -->
 													</div>
 												</div>
 											</div>
@@ -241,6 +245,59 @@
 				</div>
 			</div> <!-- Layout -->
 		</main>
+
+
+        <div class="addfriend" id="addbox" >
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="requests">
+							<div class="title">
+								<h1>Add your friends</h1>
+								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
+							</div>
+							<div class="content out">
+									<div class="form-group">
+										<label for="user">Username:</label>
+										<input type="number" class="form-control" id="usernum" placeholder="Enter Phone Number..." required>
+                                        <span class="text-danger" id="error"></span>
+                                        <span class="text-success" id="success"></span>
+									</div>
+									<div class="form-group">
+										<label for="welcome">Message:</label>
+										<textarea class="text-control" id="usermess" placeholder="Send your welcome message..."></textarea>
+									</div>
+									<button id="find" type="submit" class="btn button w-100">Send Friend Request</button>
+							</div>
+						</div>
+					</div>
+				</div> -->
+
+							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
+				    <div class="addfriend" id="addbox" > 
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="requests">
+							<div class="title">
+								<h1>Give your feedback</h1>
+								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
+							</div>
+							<div class="content out">
+                                    <form action="{{url('/')}}/feedback" method="post">@csrf
+                                        <div class="form-group">
+										<label for="welcome">Feedback:</label>
+                                        <input type="text" name="phone" value="{{$final['phone']}}" style="display:none">
+                                        <input type="text" name="name" value="{{$final['fname'].' '.$final['lname']}}" style="display:none">
+                                        <input type="text" name="email" value="{{$final['email']}}" style="display:none">
+										<textarea class="text-control" id="userfeed" name="complaint" placeholder="Suggest Us..."></textarea>
+									</div>
+									<button id="findfeed" type="submit" class="btn button w-100">Send Feedback</button>
+                                    </form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- feedback ends !!!!!!!!!-->
+
 		<!-- Bootstrap/Swipe core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
@@ -259,6 +316,37 @@
 		</script>
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="message.js"></script>
+
+        <style>
+            .addfriend{
+                position: absolute;
+                top: 0px;
+                left: 700px;
+                z-index: -3;
+                transition: 1s;
+            }
+            .feedback{
+                position: absolute;
+                top: 0px;
+                left: 700px;
+                z-index: -3;
+                transition: 1s;
+            }
+            .title{
+                border-style:solid solid none solid;
+            }
+            .out{
+                border-style:none solid solid solid;
+            }
+            .bg-image {
+                filter: blur(0px);
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+        </style>
 	</body>
 
 </html>

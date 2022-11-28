@@ -86,7 +86,7 @@
 				</div>
 
 				</div>
-			</div> <!-- Layout -->
+			</div>
 		</main>
 		<!-- Bootstrap/Swipe core JavaScript
 		================================================== -->
