@@ -93,7 +93,6 @@
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a> -->
 
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
 
 
                                             <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
@@ -102,14 +101,12 @@
 
                                                 <div class="data">
 														<h5>My Account</h5></div>
-                                                        <i class="material-icons">keyboard_arrow_right</i>
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit"><i class="material-icons">keyboard_arrow_right</i></button></form>
 
                                             </a>
 
                                             </button>
-
-
-
+                                            
 												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
 
 												</div>
@@ -212,7 +209,7 @@
 												</div> -->
 												<div class="data">
 													<h5><a href="#" id="liveuser"></a></h5>
-												
+
 												</div>
 												<div class="dropdown">
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
@@ -220,7 +217,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-														
+
 													</div>
 												</div>
 											</div>
