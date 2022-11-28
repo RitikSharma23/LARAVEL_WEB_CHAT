@@ -93,6 +93,7 @@
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a> -->
 
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
 
 
                                             <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
@@ -101,11 +102,12 @@
 
                                                 <div class="data">
 														<h5>My Account</h5></div>
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit"><i class="material-icons">keyboard_arrow_right</i></button></form>
+                                                        <i class="material-icons">keyboard_arrow_right</i>
 
                                             </a>
 
                                             </button>
+
 
 
 												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
