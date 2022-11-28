@@ -92,10 +92,13 @@
 
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a> -->
+                                             
+                                            <form action="{{url('/')}}/profile" method="post">
+											@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none">
+											<button type="submit">updatte</button></form>
 
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
 
-
+                                             <!-- Feedback Starting -->
                                             <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
                                             <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
                                                 <i class="material-icons md-30 online">person_outline</i>
