@@ -83,15 +83,15 @@
 											<h1>Settings</h1>
 
 											<!-- Start of My Account -->
-                                            <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a>
-											<!-- <div class="category" id="myaccount" style="border: none;">
-												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
+											<div class="category" id="myaccount" >
+												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
 
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a> --> 
+												</a> -->
 
 
 
@@ -106,7 +106,8 @@
                                             </a>
 
                                             </button>
-                                            
+
+
 												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
 
 												</div>
