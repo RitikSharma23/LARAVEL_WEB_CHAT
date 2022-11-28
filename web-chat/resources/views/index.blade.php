@@ -89,10 +89,11 @@
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="Update" style="background-color: #f6f6f6;border:none;color:#bdbac2"></form>
 
 													<i class="material-icons">keyboard_arrow_right</i>
 												</a> -->
+
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
 
 
                                             <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
@@ -287,7 +288,7 @@
 				</div> -->
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <div class="addfriend" id="addbox" > 
+				    <div class="addfriend" id="addbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
@@ -310,7 +311,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- feedback ends !!!!!!!!!-->
 
 		<!-- Bootstrap/Swipe core JavaScript
