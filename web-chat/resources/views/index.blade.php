@@ -84,6 +84,25 @@
 
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
+
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
+
+											<div class="category" id="myaccount" >
+												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
+													<i class="material-icons md-30 online">person_outline</i>
+													<div class="data">
+														<h5>My Account</h5></div>
+													<i class="material-icons">keyboard_arrow_right</i>
+												</a>
+
+
+
+												<div class="collapse" id="" aria-labelledby="headingOne" data-parent="#accordionSettings">
+
+
+												</div>
+											</div>
+
 											<div class="category" id="myaccount" >
 												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
@@ -98,6 +117,10 @@
 
 												</div>
 											</div>
+
+
+
+                                            <button id="">Feedback</button>
 											<!-- End of My Account -->
 
 
