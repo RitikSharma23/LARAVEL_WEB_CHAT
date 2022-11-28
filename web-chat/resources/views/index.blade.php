@@ -85,28 +85,12 @@
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 											<div class="category" id="myaccount" >
-												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
+												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
-
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a> -->
-
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
-
-
-                                            <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
-                                            <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
-                                                <i class="material-icons md-30 online">person_outline</i>
-
-                                                <div class="data">
-														<h5>My Account</h5></div>
-                                                        <i class="material-icons">keyboard_arrow_right</i>
-
-                                            </a>
-
-                                            </button>
+												</a>
 
 
 
@@ -120,7 +104,7 @@
 											<!-- End of Notifications Settings -->
 
 											<!-- Start of Appearance Settings -->
-											<!-- <div class="category">
+											<div class="category">
 												<a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
 													<i class="material-icons md-30 online">colorize</i>
 													<div class="data">
@@ -143,7 +127,7 @@
 														</div>
 													</div>
 												</div>
-											</div> -->
+											</div>
 
                                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
@@ -206,13 +190,13 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="" alt="avatar"></a>
-												<!-- <div class="status">
+												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
-												</div> -->
+												</div>
 												<div class="data">
-													<h5><a href="#" id="liveuser"></a></h5>
-
+													<h5><a href="#" id="liveuser">Shanu Pandey</a></h5>
+													<span>Active now</span>
 												</div>
 												<div class="dropdown">
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
@@ -220,7 +204,7 @@
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
 														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-
+														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
 													</div>
 												</div>
 											</div>
@@ -285,10 +269,10 @@
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <div class="addfriend" id="addbox" >
+				    <div class="" id="feedbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
