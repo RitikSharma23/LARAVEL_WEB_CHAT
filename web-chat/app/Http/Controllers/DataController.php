@@ -68,17 +68,19 @@ class DataController extends Controller
 
         if($final!=null){
 
-        if($final['active']==0){
-        if(Auth::attempt($request->only('phone','password'))){
-            return view('/index')->with(compact('final'));
-          }else{
-            $message="wrongpassword";
-            return view('warning')->with(compact('message'));
-          }
-        }else{
-            $message="blocked";
-            return view('warning')->with(compact('message'));
-        }
+            if($final['active']==0){
+            if(Auth::attempt($request->only('phone','password'))){
+                return view('/index')->with(compact('final'));
+            }else{
+                $message="wrongpassword";
+                return view('warning')->with(compact('message'));
+            }
+            }else if($final['active']==3){
+                return redirect('admin');
+            }else{
+                $message="blocked";
+                return view('warning')->with(compact('message'));
+            }
 
         }else{$message="nouserfound";
             return view('warning')->with(compact('message'));}

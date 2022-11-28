@@ -14,10 +14,10 @@
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
         <link rel="stylesheet" href="message.css">
 	</head>
-	<body>
+	<body >
     <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['img']}}</div>
 
-		<main id="mainclass">
+		<main id="mainclass" >
 			<div class="layout">
 				<!-- Start of Navigation -->
 				<div class="navigation">
@@ -81,16 +81,31 @@
 										</div>
 										<div class="categories" id="accordionSettings">
 											<h1>Settings</h1>
+
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
-											<div class="category" id="myaccount" style="border: none;">
-												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											<div class="category" id="myaccount" >
+												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="Update" style="background-color: #f6f6f6;border:none;color:#bdbac2"></form>
+
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a>
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><input type="submit" value="           Update your profile details" style="background-color: #f6f6f6;border:none;color:#bdbac2"></form>
+												</a> -->
+
+
+                                            <button style="width:300px;background-color: white;border: none;border-radius: 10px;">
+                                            <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
+                                                <i class="material-icons md-30 online">person_outline</i>
+
+                                                <div class="data">
+														<h5>My Account</h5></div>
+                                                        <i class="material-icons">keyboard_arrow_right</i>
+
+                                            </a>
+
+                                            </button>
 
 
 
@@ -104,7 +119,7 @@
 											<!-- End of Notifications Settings -->
 
 											<!-- Start of Appearance Settings -->
-											<div class="category">
+											<!-- <div class="category">
 												<a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
 													<i class="material-icons md-30 online">colorize</i>
 													<div class="data">
@@ -127,7 +142,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> -->
 
                                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
@@ -327,7 +342,7 @@
             }
             .feedback{
                 position: absolute;
-                top: 0px;
+                top: -900px;
                 left: 700px;
                 z-index: -3;
                 transition: 1s;
@@ -345,6 +360,8 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
+
 
         </style>
 	</body>
