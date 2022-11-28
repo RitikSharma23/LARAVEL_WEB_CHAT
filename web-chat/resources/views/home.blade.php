@@ -23,7 +23,7 @@
         <!-- <li class="nav-item"><a href="{{url('/')}}/home" class="nav-link active" aria-current="page">Home</a></li> -->
         <li class="nav-item" style="margin-right:1px"><a href="loginpage" class="nav-link">
           <button class="new">Login</button></a></li>
-        <li class="nav-item" style="margin-right:100px"><a href="registerpage" class="nav-link">
+        <li class="nav-item" style="margin-right:100px"><a href="otp" class="nav-link">
           <button class="new">About</button></a></li>
       </ul>
     </header>
