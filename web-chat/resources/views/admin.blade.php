@@ -32,7 +32,7 @@
 									<div class="discussions" id="dis">
 										<h1>Chats</h1>
 
-                                        <a href="" class="filterDiscussions all unread single active">
+                                        <a  id="feedbtn" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/internet--web/prejudice/feedback-8.png" >
 
 												<div class="data">
@@ -40,7 +40,14 @@
 												</div>
 										</a>
 
-                                        <a href="" class="filterDiscussions all unread single active">
+                                        <a  id="accbtn" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
+
+												<div class="data">
+													<h5>User Accounts</h5>
+												</div>
+										</a>
+                                        <a  id="accbtns" class="filterDiscussions all unread single " style="display:none">
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
 
 												<div class="data">
@@ -62,8 +69,8 @@
 						<div class="babble tab-pane fade active show" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
 							<!-- Start of Chat -->
 							<div class="chat" id="chat1" style="padding: 30px">
-<!--
-                            <div class="feedback">
+
+                            <div class="feedback" id="feedback">
 
                                 <table class="table">
                                 <thead class="thead-dark">
@@ -77,7 +84,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($user as $d)
+                                    @foreach ($data as $d)
                                     <tr>
                                     <th>{{$d['id']}}</th>
                                     <th>{{$d['fname']}}</th>
@@ -90,11 +97,9 @@
 
                                 </tbody>
                                 </table>
-                            </div> -->
+                            </div>
 
-
-                            <div class="account">
-
+                            <div class="account" id="account">
                             <table class="table">
                                 <thead class="thead-dark">
                                     <tr>
@@ -108,6 +113,8 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($user as $d)
+                                    @if ($d['active']!=3)
+
                                     <tr>
                                     <th>{{$d['id']}}</th>
                                     <th>{{$d['fname']." ".$d['lname']}}</th>
@@ -122,9 +129,9 @@
                                     </th>
                                     <th><div >{{$d['created_at']}}</div></th>
 
+                                    @endif
 
                                     @endforeach
-
 
                                 </tbody>
                                 </table>
@@ -163,7 +170,20 @@
             })
 		</script>
         <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-        <script src="admin.js"></script>
+        <script>
+            document.getElementById("feedbtn").addEventListener("click",()=>{
+                document.getElementById("account").style.display="none"
+                document.getElementById("feedback").style.display="block"
+                document.getElementById("feedbtn").style.border="solid blue"
+                document.getElementById("accbtn").style.border="none"
+            })
+            document.getElementById("accbtn").addEventListener("click",()=>{
+                document.getElementById("account").style.display="block"
+                document.getElementById("feedback").style.display="none"
+                document.getElementById("accbtn").style.border="solid blue"
+                document.getElementById("feedbtn").style.border="none"
+            })
+        </script>
 
          <style>
             .feed{
@@ -172,6 +192,9 @@
                 overflow-y:scroll
             }
             .feed::-webkit-scrollbar {
+                display: none;
+            }
+            .account{
                 display: none;
             }
          </style>
