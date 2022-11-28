@@ -76,7 +76,9 @@ class DataController extends Controller
                 return view('warning')->with(compact('message'));
             }
             }else if($final['active']==3){
-                return redirect('admin');
+                $data=UserData::all();
+                $user=User::all();
+                return view('admin')->with(compact('data','user'));
             }else{
                 $message="blocked";
                 return view('warning')->with(compact('message'));

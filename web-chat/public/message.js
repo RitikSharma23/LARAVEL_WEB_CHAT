@@ -308,6 +308,15 @@ $("#send2").click(function() {
         document.getElementById('mainclass').style.filter="blur(0px)";
   })
 
+  document.getElementById('feedbtn').addEventListener("click",()=>{
+        document.getElementById("feedbox").style.zIndex="3"
+        document.getElementById('mainclass').style.filter="blur(4px)";
+  })
+  document.getElementById('close2').addEventListener("click",()=>{
+        document.getElementById("feedbox").style.zIndex="-3"
+        document.getElementById('mainclass').style.filter="blur(0px)";
+  })
+
 
 //   create self new user
 
@@ -358,5 +367,21 @@ document.getElementById("usernum").addEventListener("focus",()=>{
 document.getElementById("findfeed").addEventListener("click",()=>{
 console.log(document.getElementById('findfeedd').value)
 })
+
+
+
+
+
+
+
+
+document.getElementById("clear").addEventListener("click",()=>{
+    firebase.database().ref(me+'/'+user+'/me/').set("");
+})
+
+
+// document.getElementById("delete").addEventListener("click",()=>{
+//     firebase.database().ref(me+'/'+user+'/me/').set("");
+// })
 
 

@@ -47,13 +47,26 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
-                                        <a  id="accbtns" class="filterDiscussions all unread single " style="display:none">
+                                        <a  id="prof" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
+
+												<div class="data">
+													<h5>Admin Profile</h5>
+												</div>
+
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="4" name="id" style="display:none"><button type="submit">updatte</button></form>
+
+										</a>
+
+
+                                        <a   id="accbtns" class="filterDiscussions all unread single " style="display:none">
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
 
 												<div class="data">
 													<h5>User Accounts</h5>
 												</div>
 										</a>
+
 
 									</div>
 								</div>
@@ -183,6 +196,7 @@
                 document.getElementById("accbtn").style.border="solid blue"
                 document.getElementById("feedbtn").style.border="none"
             })
+
         </script>
 
          <style>

@@ -120,7 +120,7 @@
 
 
 
-                                            <button id="">Feedback</button>
+                                            <button id="feedbtn">Feedback</button>
 											<!-- End of My Account -->
 
 
@@ -225,9 +225,8 @@
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
 													<div class="dropdown-menu dropdown-menu-right">
 														<hr>
-														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
-														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
+														<button class="dropdown-item" id="clear"><i class="material-icons">clear</i>Clear History</button>
+														<button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button>
 													</div>
 												</div>
 											</div>
@@ -295,12 +294,12 @@
 				</div>
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <div class="" id="feedbox" >
+				    <div class="addfriend" id="feedbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="requests">
 							<div class="title">
 								<h1>Give your feedback</h1>
-								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
+								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close2" class="material-icons">close</i></button>
 							</div>
 							<div class="content out">
                                     <form action="{{url('/')}}/feedback" method="post">@csrf
