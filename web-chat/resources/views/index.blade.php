@@ -214,7 +214,7 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" id="imgch3"  src="/profile/{{$final['fname']}}.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" id="imgch3"  src="profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
 												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div> -->
@@ -252,9 +252,6 @@
 												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
 												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
 												<button type="submit" class="btn send"><i class="material-icons" id="">send</i></button>
-											
-												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-
 
 									</div>
 								</div>
@@ -270,7 +267,10 @@
 
         <div class="addfriend" id="addbox" >
 					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="requests">
+						<div class=
+												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
+
+"requests">
 							<div class="title">
 								<h1>Add your friends</h1>
 								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
