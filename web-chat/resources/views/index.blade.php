@@ -215,7 +215,7 @@
 										<div class="col-md-12">
 											<div class="inside">
 												<a href="#"><img class="avatar-md" id="imgch3"  src="/profile/{{$final['fname']}}.jpg" data-toggle="tooltip" data-placement="top"  alt="avatar"></a>
-												<a href="#"><img class="avatar-md" id="imgch3"  src="profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<!-- <a href="#"><img class="avatar-md" id="imgch3"  src="profile.png" data-toggle="tooltip" data-placement="top"  alt="avatar"></a> -->
 												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div> -->
