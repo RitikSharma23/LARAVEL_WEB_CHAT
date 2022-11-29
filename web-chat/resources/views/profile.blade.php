@@ -21,7 +21,7 @@
 					<div class="container">
 						<div class="inside">
 							<div class="nav nav-tab menu">
-								<button class="btn"><img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar"></button>
+								<button class="btn"><img class="avatar-xl" src="/profile/{{$data['fname']}}.jpg" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
 								<a onclick="history.back()" data-toggle="tab" class="active"><i class="material-icons active" style="cursor: pointer;">arrow_back</i></a>
 								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
@@ -35,7 +35,7 @@
 
                 <div class="img" style="border:none;width:100%;height:300px">
                     <center>
-                    <img src="https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg"
+                    <img src="/profile/{{$data['fname']}}.jpg"
                     style="height:300px;border:none;border-radius:1000px">
                     </center>
 
@@ -64,7 +64,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" disabled>
+											<input type="number" name="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" >
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 										</div>
 										<div class="form-group">

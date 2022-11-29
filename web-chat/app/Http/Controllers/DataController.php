@@ -109,11 +109,6 @@ class DataController extends Controller
     }
 
     public function doupdate(Request $request){
-        echo "<pre>";
-        print_r($request->toarray());
-        // $file-> move(public_pat/h('public/Image'), $filename);
-
-        // echo $request->file('image')->storeAs('public',"ritik.jpg");
 
         $request->image->move(public_path('profile'),"ritik.jpg");
 
