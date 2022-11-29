@@ -85,15 +85,15 @@
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button type="submit">updatte</button></form>
+                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button></form>
 
 											<div class="category" id="myaccount" >
-												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
+												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a>
+												</a> -->
 
 
 
@@ -104,12 +104,12 @@
 											</div>
 
 											<div class="category" id="myaccount" >
-												<a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
+												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
 													<i class="material-icons md-30 online">person_outline</i>
 													<div class="data">
 														<h5>My Account</h5></div>
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a>
+												</a> -->
 
 
 
@@ -120,7 +120,8 @@
 
 
 
-                                            <button id="feedbtn">Feedback</button>
+                                            <br>
+									<button id="feedbtn" class="fbtn"><i class="material-icons md-30 online">feedback</i>Feedback</button>
 											<!-- End of My Account -->
 
 
@@ -128,14 +129,14 @@
 
 											<!-- Start of Appearance Settings -->
 											<div class="category">
-												<a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+												<!-- <a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
 													<i class="material-icons md-30 online">colorize</i>
 													<div class="data">
 														<h5>Appearance</h5>
 														<p>Customize the look of Swipe</p>
 													</div>
 													<i class="material-icons">keyboard_arrow_right</i>
-												</a>
+												</a> -->
 												<div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionSettings">
 													<div class="content no-layer">
 														<div class="set">
@@ -362,8 +363,51 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+			.sbtn{
+				
+				width: 300px;
+				height: 70px;				
+				background-color: white;
+				border-radius: 10px;
+				border: none;
+				font-size: larger;
+				
 
 
+			}
+			.sbtn i{
+			float: left;	
+			margin-left: 10px;	
+			
+
+
+			}
+			.sbtn:hover{
+				border:3px solid #2196F3 ;
+				
+			}
+			.fbtn{
+				float: center;
+				width: 300px;
+				height: 70px;				
+				background-color: white;
+				border-radius: 10px;
+				border: none;
+				font-size: larger;
+
+
+
+			}
+			.fbtn i{
+			float: left;
+			margin-left: 10px;
+
+
+			}
+			.fbtn:hover{
+				border:3px solid #2196F3 ;
+
+			}
 
         </style>
 	</body>
