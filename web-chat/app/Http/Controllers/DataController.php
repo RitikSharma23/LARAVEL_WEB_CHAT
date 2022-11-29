@@ -149,11 +149,11 @@ class DataController extends Controller
           }
     }
 
-    public function adminpanel(){
-        $data=UserData::all();
-        $user=User::all();
-        return view('admin')->with(compact('data','user'));
-    }
+    // public function adminpanel(){
+    //     $data=UserData::all();
+    //     $user=User::all();
+    //     return view('admin')->with(compact('data','user'));
+    // }
 
     public function feeddelete(Request $r){
         $d=UserData::find($r['token']);
