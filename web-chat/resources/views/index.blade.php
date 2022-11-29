@@ -24,7 +24,7 @@
 					<div class="container">
 						<div class="inside">
 							<div class="nav nav-tab menu">
-								<button class="btn"><img class="avatar-xl" id="imgch"  src="dist/img/avatars/profile.png" alt="avatar"></button>
+								<button class="btn"><img class="avatar-xl" id="imgch"  src="/profile/{{$final['fname']}}.jpg" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
 								<a href="#discussions" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
 
@@ -76,7 +76,7 @@
 								<div class="tab-pane fade" id="settings">
 									<div class="settings">
 										<div class="profile">
-											<img class="avatar-xl" id="imgch2"   src="dist/img/avatars/profile.png" alt="avatar">
+											<img class="avatar-xl" id="imgch2"   src="/profile/{{$final['fname']}}.jpg" alt="avatar">
 											<h1><a href="#">{{$final['fname'] }} {{$final['lname']}}</a></h1>
 										</div>
 										<div class="categories" id="accordionSettings">
@@ -85,7 +85,7 @@
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 
-                                            <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button></form>
+                                            <form action="{{url('/')}}/profil" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button></form>
 
 											<div class="category" id="myaccount" >
 												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">
@@ -214,7 +214,7 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" id="imgch3"  src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" id="imgch3"  src="/profile/{{$final['fname']}}.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
 												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div> -->

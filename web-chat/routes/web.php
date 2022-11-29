@@ -27,7 +27,7 @@ Route::view('loginpage','loginpage');
 Route::view('registerpage','registerpage');
 Route::view('index','index');
 Route::view('password','password');
-Route::post('profile',[DataController::class,'prof']);
+Route::post('profil',[DataController::class,'prof']);
 Route::view('about','about');
 
 Route::post('register',[DataController::class,'register']);

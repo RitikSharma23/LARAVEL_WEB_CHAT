@@ -1,5 +1,5 @@
 
-
+uimage=""
 firstuser=""
 lastmessage=""
 function messageyou(word,time){
@@ -376,6 +376,6 @@ document.getElementById("clear").addEventListener("click",()=>{
 })
 
 
-document.getElementById("imgch").src="profile/Ritik.jpg"
-document.getElementById("imgch2").src="profile/Ritik.jpg"
+// document.getElementById("imgch").src="profile/Ritik.jpg"
+// document.getElementById("imgch2").src="profile/Ritik.jpg"
 
