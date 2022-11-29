@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,35 +24,36 @@
 <link rel="stylesheet" href="css.css">
 <title>HOME</title>
 </head>
-<body style="overflow:hidden;background-color:#8a4ef9">
-<div class="container">
-    <header class="d-flex justify-content-center py-3" style="width:99vw;margin-left:-120px;">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4" style="color:White">WEB CHAT</span>
-      </a>
+<body>
+<center><img  style="width:90%"src="about.png"></center>
+<a href="registerpage"> <button class="shan">Start Chat</button></a>
 
-      <ul class="nav nav-pills">
-        <!-- <li class="nav-item"><a href="{{url('/')}}/home" class="nav-link active" aria-current="page">Home</a></li> -->
-        <li class="nav-item" style="margin-right:1px"><a href="loginpage" class="nav-link">
-          <button class="new">Login</button></a></li>
-        <li class="nav-item" style="margin-right:100px"><a href="about" class="nav-link">
-          <button class="new">About</button></a></li>
-      </ul>
-    </header>
-    <!-- <img style="width:92vw;position:relative;top: -24px;" src="web.jpg"> -->
-    <div class="bb">
-        <h1 class="hy">Have your<br><span class="ch">best chat</span></h1>
-    </div>
-    <div class="cc">
-      <p>Fast easy & Unlimited chat Experience<br>you'll ever head</p>
-    </div>
-  </div> 
-  <a href="registerpage"> <button class="shan">Get Started</button></a> 
-  <img class="ss" src="home.png">
 
+<img style="width: 100%" src="abt2.png" alt="">
+<a href="registerpage"> <button class="str">Let's Go</button></a>
+    
 
   <style>
+    .str{
+      position:absolute;
+      top: 1000px;
+      left:700px;
+      width:350px;
+      height:80px;
+      border-radius:5px;
+      background-color:#f0483e;
+      border:none;
+      color:white;
+      font-size:25px;
+      font-family:bold;
+
+    }
+
+    .str:hover{
+      background-color:white;
+      box-shadow:0px 0px 10px 1px #59c7e3;
+      color:#0078d4
+    }
     .ss{
       position:absolute;
       right:300px;
@@ -82,12 +96,12 @@
     }
     .shan{
       position:absolute;
-      top: 430px;
-      left:195px;
+      top: 543px;
+      left:210px;
       width:200px;
-      height:60px;
-      border-radius:100px;
-      background-color:#694c8c;
+      height:62px;
+      border-radius:5px;
+      background-color:#0078d4;
       border:none;
       color:white;
       font-size:25px;
@@ -97,8 +111,12 @@
     .shan:hover{
       background-color:white;
       box-shadow:0px 0px 10px 1px #59c7e3;
-      color:#694c8c
+      color:#0078d4
     }
   </style>
+</body>
+</html>
+
+
 </body>
 </html>
