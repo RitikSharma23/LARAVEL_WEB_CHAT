@@ -157,6 +157,7 @@ function dischat(me,user){
     try{
         image=x[2].replace('_','.')
     }catch{}
+    zx=0;
 
     document.getElementById('liveuser').innerHTML=nam
 
@@ -168,8 +169,6 @@ function dischat(me,user){
 
           var childKey = childSnapshot.key;
           var childData = childSnapshot.val();
-
-
 
         tt=timeconvert(parseInt(childKey.slice(0,13)),+5.50)
 
@@ -183,17 +182,17 @@ function dischat(me,user){
           if(childKey[(childKey.length)-1]=="L"){
             tt=timeconvert(parseInt(childKey.slice(0,13)),+5.50)
             messageyou(childData,tt)
+            zx++;
+
           }
 
           var objDiv = document.getElementById("content");
           objDiv.scrollTop = objDiv.scrollHeight;
-
-
-
-
         });
 
       });
+
+      console.log(zx)
 }
 
 
@@ -316,11 +315,6 @@ $("#send2").click(function() {
         document.getElementById("feedbox").style.zIndex="-3"
         document.getElementById('mainclass').style.filter="blur(0px)";
   })
-
-
-//   create self new user
-
-
 
 
 function newuser(newuser,message){
