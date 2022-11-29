@@ -250,8 +250,8 @@
 											<div class="position-relative w-100">
                                                 <input type="text" name="" id="">
 												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
-												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
-												<button type="submit" class="btn send"><i class="material-icons" id="">send</i></button>
+												<button class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
+												<button id="send2" type="submit" class="btn send"><i class="material-icons" id="">send</i></button>
 
 									</div>
 								</div>
