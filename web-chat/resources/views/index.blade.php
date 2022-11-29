@@ -214,18 +214,18 @@
 										<div class="col-md-12">
 											<div class="inside">
 												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
-												<div class="status">
+												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
-												</div>
+												</div> -->
 												<div class="data">
-													<h5><a href="#" id="liveuser">Shanu Pandey</a></h5>
-													<span>Active now</span>
+													<h5><a href="#" id="liveuser"></a></h5>
+													<span style="color: white;">Active now</span>
 												</div>
 												<div class="dropdown">
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
 													<div class="dropdown-menu dropdown-menu-right">
 														<hr>
-														<button class="dropdown-item" id="clear"><i class="material-icons">clear</i>Clear History</button>
+														<button class="dropdown-item" id="clear"><i class="material-icons">clear</i>Clear Chat</button>
 														<button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button>
 													</div>
 												</div>
@@ -251,12 +251,7 @@
 												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
 												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
 												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-											</div>
-											<label>
-												<input type="file">
-												<span class="btn attach d-sm-block d-none"><i class="material-icons">attach_file</i></span>
-											</label>
-										</div>
+											
 									</div>
 								</div>
 							</div>
