@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\UserData;
+use Faker\Core\File;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+
 
 
 class DataController extends Controller
@@ -75,10 +78,16 @@ class DataController extends Controller
                 $message="wrongpassword";
                 return view('warning')->with(compact('message'));
             }
-            }else if($final['active']==3){
+            }else if($final['active']==3 ){
+                if(Auth::attempt($request->only('phone','password'))){
                 $data=UserData::all();
                 $user=User::all();
                 return view('admin')->with(compact('data','user'));
+                }else{
+                    $message="nouserfound";
+                return view('warning')->with(compact('message'));
+                }
+
             }else{
                 $message="blocked";
                 return view('warning')->with(compact('message'));
@@ -100,21 +109,26 @@ class DataController extends Controller
     }
 
     public function doupdate(Request $request){
-        if(Auth::check()){
-            $data=User::find($request['id']);
-        $data->fname=$request['fname'];
-        $data->lname=$request['lname'];
-        $data->email=$request['email'];
-        $data->phone=$request['phone'];
-        if($request['password']!="" and $request['cnf_password']!=""){
-        $data->password= Hash::make($request['password']);
-        }
+        echo "<pre>";
+        print_r($request->toarray());
 
-        $data->save();
-        return view('profile')->with(compact('data'));
-        }else{
-            return redirect('/loginpage');
-        }
+        echo $request->file('image')->store('public',);
+
+        // if(Auth::check()){
+        //     $data=User::find($request['id']);
+        // $data->fname=$request['fname'];
+        // $data->lname=$request['lname'];
+        // $data->email=$request['email'];
+        // $data->phone=$request['phone'];
+        // if($request['password']!="" and $request['cnf_password']!=""){
+        // $data->password= Hash::make($request['password']);
+        // }
+
+        // $data->save();
+        // return view('profile')->with(compact('data'));
+        // }else{
+        //     return redirect('/loginpage');
+        // }
 
     }
 

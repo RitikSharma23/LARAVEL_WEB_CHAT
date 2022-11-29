@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="message.css">
 	</head>
 	<body >
-    <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['img']}}</div>
+    <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['fname']."_jpg"}}</div>
 
 		<main id="mainclass" >
 			<div class="layout">
@@ -252,7 +252,7 @@
 												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
 												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
 												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-											
+
 									</div>
 								</div>
 							</div>
@@ -332,7 +332,7 @@
                 // alert("laskdh")
             })
 		</script>
-  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+		  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="message.js"></script>
 
         <style>
@@ -364,32 +364,32 @@
                 background-size: cover;
             }
 			.sbtn{
-				
+
 				width: 300px;
-				height: 70px;				
+				height: 70px;
 				background-color: white;
 				border-radius: 10px;
 				border: none;
 				font-size: larger;
-				
+
 
 
 			}
 			.sbtn i{
-			float: left;	
-			margin-left: 10px;	
-			
+			float: left;
+			margin-left: 10px;
+
 
 
 			}
 			.sbtn:hover{
 				border:3px solid #2196F3 ;
-				
+
 			}
 			.fbtn{
 				float: center;
 				width: 300px;
-				height: 70px;				
+				height: 70px;
 				background-color: white;
 				border-radius: 10px;
 				border: none;
