@@ -111,24 +111,27 @@ class DataController extends Controller
     public function doupdate(Request $request){
         echo "<pre>";
         print_r($request->toarray());
+        // $file-> move(public_pat/h('public/Image'), $filename);
 
-        echo $request->file('image')->store('public',);
+        // echo $request->file('image')->storeAs('public',"ritik.jpg");
 
-        // if(Auth::check()){
-        //     $data=User::find($request['id']);
-        // $data->fname=$request['fname'];
-        // $data->lname=$request['lname'];
-        // $data->email=$request['email'];
-        // $data->phone=$request['phone'];
-        // if($request['password']!="" and $request['cnf_password']!=""){
-        // $data->password= Hash::make($request['password']);
-        // }
+        $request->image->move(public_path('profile'),"ritik.jpg");
 
-        // $data->save();
-        // return view('profile')->with(compact('data'));
-        // }else{
-        //     return redirect('/loginpage');
-        // }
+        if(Auth::check()){
+            $data=User::find($request['id']);
+        $data->fname=$request['fname'];
+        $data->lname=$request['lname'];
+        $data->email=$request['email'];
+        $data->phone=$request['phone'];
+        if($request['password']!="" and $request['cnf_password']!=""){
+        $data->password= Hash::make($request['password']);
+        }
+
+        $data->save();
+        return view('profile')->with(compact('data'));
+        }else{
+            return redirect('/loginpage');
+        }
 
     }
 

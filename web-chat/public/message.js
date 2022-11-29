@@ -63,7 +63,7 @@ function usercreate(name){
 
     var img=document.createElement('img')
     img.classList.add('avatar-md')
-    img.src="dist/img/avatars/profile.png"
+    img.src="profile/"+image
     img.title="Shanu"
     img.alt="avatar"
 
@@ -158,6 +158,8 @@ function dischat(me,user){
         image=x[2].replace('_','.')
     }catch{}
     zx=0;
+
+document.getElementById("imgch3").src="profile/"+image
 
     document.getElementById('liveuser').innerHTML=nam
 
@@ -374,8 +376,6 @@ document.getElementById("clear").addEventListener("click",()=>{
 })
 
 
-// document.getElementById("delete").addEventListener("click",()=>{
-//     firebase.database().ref(me+'/'+user+'/me/').set("");
-// })
-
+document.getElementById("imgch").src="profile/Ritik.jpg"
+document.getElementById("imgch2").src="profile/Ritik.jpg"
 

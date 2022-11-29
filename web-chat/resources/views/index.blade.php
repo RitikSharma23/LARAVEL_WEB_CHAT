@@ -24,7 +24,7 @@
 					<div class="container">
 						<div class="inside">
 							<div class="nav nav-tab menu">
-								<button class="btn"><img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar"></button>
+								<button class="btn"><img class="avatar-xl" id="imgch"  src="dist/img/avatars/profile.png" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
 								<a href="#discussions" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
 
@@ -76,7 +76,7 @@
 								<div class="tab-pane fade" id="settings">
 									<div class="settings">
 										<div class="profile">
-											<img class="avatar-xl" src="dist/img/avatars/profile.png" alt="avatar">
+											<img class="avatar-xl" id="imgch2"   src="dist/img/avatars/profile.png" alt="avatar">
 											<h1><a href="#">{{$final['fname'] }} {{$final['lname']}}</a></h1>
 										</div>
 										<div class="categories" id="accordionSettings">
@@ -166,7 +166,7 @@
 										<label for="user">Username:</label>
 										<input type="text" class="form-control" id="user" placeholder="Add recipient..." required>
 										<div class="user" id="contact">
-											<img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
+											<img class="avatar-sm"  src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
 											<h5>Keith Morris</h5>
 											<button class="btn"><i class="material-icons">close</i></button>
 										</div>
@@ -214,7 +214,7 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" id="imgch3"  src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
 												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div> -->
