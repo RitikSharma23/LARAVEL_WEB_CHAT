@@ -158,7 +158,9 @@ class DataController extends Controller
     public function feeddelete(Request $r){
         $d=UserData::find($r['token']);
         $d->delete();
-        return redirect('admin');
+        $data=UserData::all();
+                $user=User::all();
+                return view('admin')->with(compact('data','user'));
     }
 
     public function block(Request $r)
@@ -166,7 +168,9 @@ class DataController extends Controller
         $d=User::find($r['token']);
         $d->active=1;
         $d->save();
-        return redirect('admin');
+        $data=UserData::all();
+                $user=User::all();
+                return view('admin')->with(compact('data','user'));
     }
     public function unblock(Request $r)
     {
@@ -174,7 +178,9 @@ class DataController extends Controller
         $d->active=0;
         $d->save();
 
-        return redirect('admin');
+        $data=UserData::all();
+                $user=User::all();
+                return view('admin')->with(compact('data','user'));
     }
 
 
