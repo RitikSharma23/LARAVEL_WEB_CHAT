@@ -3,7 +3,7 @@
 
 <head>
 		<meta charset="utf-8">
-		<title>Index</title>
+		<title>User | Index</title>
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap core CSS -->
@@ -251,7 +251,7 @@
                                                 <input type="text" name="" id="">
 												<textarea id="text2" class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
 												<button id="send2" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
-												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
+												<button type="submit" class="btn send"><i class="material-icons" id="">send</i></button>
 											
 									</div>
 								</div>

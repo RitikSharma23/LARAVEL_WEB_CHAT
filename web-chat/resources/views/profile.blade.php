@@ -60,7 +60,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}">
+											<input type="number" name="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" disabled>
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 										</div>
 										<div class="form-group">
