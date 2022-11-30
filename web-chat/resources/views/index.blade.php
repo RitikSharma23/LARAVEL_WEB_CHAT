@@ -266,11 +266,8 @@
 
 
         <div class="addfriend" id="addbox" >
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class=
-												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-
-"requests">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="requests">
 							<div class="title">
 								<h1>Add your friends</h1>
 								<button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i id="close" class="material-icons">close</i></button>
