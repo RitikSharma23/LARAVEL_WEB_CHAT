@@ -91,7 +91,7 @@
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 
                                             <form action="{{url('/')}}/profil" method="post">@csrf
-                                                <input type="text" value="{{$final['id']}}" name="id" >
+                                                <input type="text" value="{{$final['id']}}" name="id" style="display: none;" >
                                                 <button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button>
                                             </form>
 
@@ -235,7 +235,7 @@
 													<div class="dropdown-menu dropdown-menu-right">
 														<hr>
 														<button class="dropdown-item" id="clear"><i class="material-icons">clear</i>Clear Chat</button>
-														<button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button>
+														<!-- <button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button> -->
 													</div>
 												</div>
 											</div>
