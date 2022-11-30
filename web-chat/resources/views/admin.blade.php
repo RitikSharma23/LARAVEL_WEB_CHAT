@@ -54,9 +54,9 @@
 													<h5>Admin Profile</h5>
 												</div>
 
-                                
+
 										</a> -->
-                                        <form action="{{url('/')}}/profile" method="post">@csrf<input type="text" value="4" name="id" style="display:none"><button class="sbtn" type="submit" id="sb"><span class="material-icons">edit</span><span class="us">Update Profile</span></button></form>
+                                        <form action="{{url('/')}}/profil" method="post">@csrf<input type="text" value="4" name="id" style="display:none"><button class="sbtn" type="submit" id="sb"><span class="material-icons">edit</span><span class="us">Update Profile</span></button></form>
 
 
 
@@ -190,16 +190,16 @@
                 document.getElementById("feedback").style.display="block"
                 document.getElementById("feedbtn").style.border="solid #2196F3"
                 document.getElementById("accbtn").style.border="none"
-                
+
             })
             document.getElementById("accbtn").addEventListener("click",()=>{
                 document.getElementById("account").style.display="block"
                 document.getElementById("feedback").style.display="none"
                 document.getElementById("accbtn").style.border="solid #2196F3"
                 document.getElementById("feedbtn").style.border="none"
-               
+
             })
-           
+
 
 
         </script>
@@ -217,17 +217,17 @@
                 display: none;
             }
             .sbtn{
-				
+
 				width: 305px;
-				height: 85px;				
+				height: 85px;
 				background-color: white;
 				border-radius: 10px;
 				border: none;
 				font-size: larger;
                 margin-top: 10px;
-              
-                
-				
+
+
+
 
 
 			}
@@ -235,19 +235,19 @@
 			.sbtn span{
                 float: left;
                 margin-left: 20px;
-               
-			
+
+
             }
             .us {
                 padding-left: 10px;
                 font-weight: 700;
-                
+
                 font-size: 16px;
                 color: #212529;
             }
             #feedbtn,#accbtn,.sbtn:hover{
                 cursor: pointer;
-               
+
             }
 
          </style>
