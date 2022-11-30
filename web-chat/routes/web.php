@@ -43,4 +43,5 @@ Route::post('unblock',[DataController::class,'unblock']);
 
 Route::post('find',[DataController::class,'find']);
 Route::post('resetpass',[DataController::class,'resetpass']);
+Route::get('excel',[DataController::class,'excel']);
 
