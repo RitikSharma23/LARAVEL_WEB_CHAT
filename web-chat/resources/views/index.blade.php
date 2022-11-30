@@ -90,7 +90,10 @@
 											<!-- Start of My Account -->
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 
-                                            <form action="{{url('/')}}/profil" method="post">@csrf<input type="text" value="{{$final['id']}}" name="id" style="display:none"><button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button></form>
+                                            <form action="{{url('/')}}/profil" method="post">@csrf
+                                                <input type="text" value="{{$final['id']}}" name="id" >
+                                                <button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button>
+                                            </form>
 
 											<div class="category" id="myaccount" >
 												<!-- <a href="/jhjhjh" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: white;border: none;border-radius: 10px;">

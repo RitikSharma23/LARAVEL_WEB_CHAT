@@ -54,6 +54,7 @@ class DataController extends Controller
         }
 
     }
+
     public function login(Request $request){
         $request->validate([
             'phone'=>'required|numeric|max_digits:10|min_digits:10',
@@ -110,7 +111,7 @@ class DataController extends Controller
 
     public function doupdate(Request $request){
 
-        $request->image->move(public_path('profile'),"ritik.jpg");
+        $request->image->move(public_path('profile'),$request['fname'].".jpg");
 
         if(Auth::check()){
             $data=User::find($request['id']);
@@ -118,6 +119,7 @@ class DataController extends Controller
         $data->lname=$request['lname'];
         $data->email=$request['email'];
         $data->phone=$request['phone'];
+
         if($request['password']!="" and $request['cnf_password']!=""){
         $data->password= Hash::make($request['password']);
         }
@@ -161,11 +163,6 @@ class DataController extends Controller
           }
     }
 
-    // public function adminpanel(){
-    //     $data=UserData::all();
-    //     $user=User::all();
-    //     return view('admin')->with(compact('data','user'));
-    // }
 
     public function feeddelete(Request $r){
         $d=UserData::find($r['token']);
@@ -184,6 +181,7 @@ class DataController extends Controller
                 $user=User::all();
                 return view('admin')->with(compact('data','user'));
     }
+
     public function unblock(Request $r)
     {
         $d=User::find($r['token']);
@@ -234,6 +232,31 @@ class DataController extends Controller
         $f->save();
         $message="passwordreset";
         return view('warning')->with(compact('message'));
+
+    }
+
+
+    public function excel()
+    {
+        $myfile = fopen("result.xls", "w") or die("Unable to open file!");
+        fwrite($myfile, 'Token ID' . "\t" . 'Name' . "\t" . 'Phone' . "\t" . 'Email' . "\t" . 'Feedback'. "\n");
+
+        $data=UserData::all();
+
+        foreach($data as $d){
+
+            fwrite($myfile, $d['id'] . "\t" . $d['name']  . "\t" . $d['phone']  . "\t" . $d['email']  . "\t" . $d['complaint'] . "\n");
+
+        }
+
+
+        // {
+
+        // fwrite($myfile, $index["fname"] . "\t" . $index["lname"]. "\t" .$index["uid"]."_". "\t" .$index["marks"] . "\n");
+
+        // array_push($result['data'],$index);
+        // }
+        fclose($myfile);
 
     }
 }

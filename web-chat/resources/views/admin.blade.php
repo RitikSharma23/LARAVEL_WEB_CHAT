@@ -47,6 +47,13 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
+                                        <a href="{{url('/')}}/excel"  id="accbtn" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
+
+												<div class="data">
+													<h5>Download Feedback Report</h5>
+												</div>
+										</a>
                                         <!-- <a  id="prof" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
 
