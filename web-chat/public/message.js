@@ -56,7 +56,6 @@ function usercreate(name){
     phone=x[0]
     try{
         image=x[2].replace('_','.')
-        uimage=image
     }catch{}
     var a=document.createElement('a')
     a.classList.add('filterDiscussions','all','unread','single')
@@ -69,7 +68,7 @@ function usercreate(name){
     img.alt="avatar"
 
 
-    
+
 
     var h=document.createElement('h5')
     h.innerHTML=nam
@@ -164,6 +163,7 @@ function dischat(me,user){
     zx=0;
 
 document.getElementById("imgch3").src="profile/"+image
+uimage="profile/"+image
 
     document.getElementById('liveuser').innerHTML=nam
 
@@ -210,17 +210,15 @@ document.getElementById("imgch3").src="profile/"+image
     dischat(me,user)
 
 
-
-
     var myFunction = function() {
         var attribute = this.getAttribute("id");
 
         if(firstuser!=null){
             dischat(me,attribute)
             console.log(attribute)
+            user=attribute
         }
 
-        user=attribute
     };
 
     for (var i = 0; i < elements.length; i++) {
@@ -397,9 +395,8 @@ document.getElementById("clear").addEventListener("click",()=>{
 
 document.getElementById("imgch3").addEventListener("click",()=>{
   var x= document.getElementById("db").style.zIndex="3"
-  document.getElementById("dp").src="profile/"+uimage
+  document.getElementById("dp").src=uimage
   document.getElementById("mainclass").style.filter="blur(10px)"
-  // alert(uimage)
 })
 
 

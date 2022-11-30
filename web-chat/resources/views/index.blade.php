@@ -17,7 +17,7 @@
 	<body >
 		 <!-- for image zoom -->
 
-		
+
 									 <!-- end of image zoom -->
 
     <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['fname']."_jpg"}}</div>
@@ -326,16 +326,16 @@
 				<div class="addfriend1" id="bb" >
 				<button type="button" class="btn" style="float: right; position: absolute;" data-dismiss="modal" aria-label="Close"><i id="close3" class="material-icons">close</i></button>
 						<img   src="profile/{{$final['fname']}}.jpg" alt="" srcset="" height="500px" width="500px">
-							
+
 				</div>
 
 				<div class="addfriend1" id="db">
 				<button type="button" class="btn" style="float: right; position: absolute;" data-dismiss="modal" aria-label="Close"><i id="close4" class="material-icons">close</i></button>
 						<img id="dp"  src="" alt="" srcset="" height="500px" width="500px">
-							
+
 				</div>
 
-				 
+
 
 				<!-- feedback ends !!!!!!!!!-->
 
@@ -443,9 +443,6 @@
 				border-radius: 10px;
 				border: none;
 				font-size: larger;
-
-
-
 			}
 			.fbtn i{
 			float: left;
@@ -457,7 +454,7 @@
 				border:3px solid #2196F3 ;
 
 			}
-			
+
 
         </style>
 	</body>
