@@ -56,6 +56,7 @@ function usercreate(name){
     phone=x[0]
     try{
         image=x[2].replace('_','.')
+        uimage=image
     }catch{}
     var a=document.createElement('a')
     a.classList.add('filterDiscussions','all','unread','single')
@@ -64,8 +65,11 @@ function usercreate(name){
     var img=document.createElement('img')
     img.classList.add('avatar-md')
     img.src="profile/"+image
-    img.title="Shanu"
+    img.title=nam
     img.alt="avatar"
+
+
+    
 
     var h=document.createElement('h5')
     h.innerHTML=nam
@@ -365,6 +369,21 @@ console.log(document.getElementById('findfeedd').value)
 })
 
 
+document.getElementById("imgch").addEventListener("click",()=>{
+ var x= document.getElementById("bb").style.zIndex="3"
+ document.getElementById("mainclass").style.filter="blur(10px)"
+})
+
+document.getElementById("close3").addEventListener("click",()=>{
+  var x= document.getElementById("bb").style.zIndex="-3"
+  document.getElementById("mainclass").style.filter="blur(0px)"
+})
+document.getElementById("close4").addEventListener("click",()=>{
+  var x= document.getElementById("db").style.zIndex="-3"
+  document.getElementById("mainclass").style.filter="blur(0px)"
+})
+
+
 
 
 
@@ -374,6 +393,16 @@ console.log(document.getElementById('findfeedd').value)
 document.getElementById("clear").addEventListener("click",()=>{
     firebase.database().ref(me+'/'+user+'/me/').set("");
 })
+
+
+document.getElementById("imgch3").addEventListener("click",()=>{
+  var x= document.getElementById("db").style.zIndex="3"
+  document.getElementById("dp").src="profile/"+uimage
+  document.getElementById("mainclass").style.filter="blur(10px)"
+  // alert(uimage)
+})
+
+
 
 
 // document.getElementById("imgch").src="profile/Ritik.jpg"

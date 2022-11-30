@@ -15,6 +15,11 @@
         <link rel="stylesheet" href="message.css">
 	</head>
 	<body >
+		 <!-- for image zoom -->
+
+		
+									 <!-- end of image zoom -->
+
     <div id="udetail" style="display: none;">{{$final['phone']."@".$final['fname']." ".$final['lname'].""."@".$final['fname']."_jpg"}}</div>
 
 		<main id="mainclass" >
@@ -214,7 +219,7 @@
 									<div class="container">
 										<div class="col-md-12">
 											<div class="inside">
-												<a href="#"><img class="avatar-md" id="imgch3"  src="profile.png" data-toggle="tooltip" data-placement="top" title="Shanu" alt="avatar"></a>
+												<a href="#"><img class="avatar-md" id="imgch3"  src="profile.png" data-toggle="tooltip" data-placement="top" title="" alt="avatar"></a>
 												<!-- <div class="status">
 													<i class="material-icons online">fiber_manual_record</i>
 												</div> -->
@@ -291,7 +296,7 @@
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
 				    <div class="addfriend" id="feedbox" >
-					<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-dialog modal-dialog-centered ind" role="document">
 						<div class="requests">
 							<div class="title">
 								<h1>Give your feedback</h1>
@@ -313,6 +318,21 @@
 						</div>
 					</div>
 				</div>
+
+
+				<div class="addfriend1" id="bb" >
+				<button type="button" class="btn" style="float: right; position: absolute;" data-dismiss="modal" aria-label="Close"><i id="close3" class="material-icons">close</i></button>
+						<img   src="profile/{{$final['fname']}}.jpg" alt="" srcset="" height="500px" width="500px">
+							
+				</div>
+
+				<div class="addfriend1" id="db">
+				<button type="button" class="btn" style="float: right; position: absolute;" data-dismiss="modal" aria-label="Close"><i id="close4" class="material-icons">close</i></button>
+						<img id="dp"  src="" alt="" srcset="" height="500px" width="500px">
+							
+				</div>
+
+				 
 
 				<!-- feedback ends !!!!!!!!!-->
 
@@ -336,6 +356,8 @@
         <script src="message.js"></script>
 
         <style>
+
+
             .addfriend{
                 position: absolute;
                 top: 0px;
@@ -343,6 +365,30 @@
                 z-index: -3;
                 transition: 1s;
             }
+			.ind{
+				border: solid;
+                position: absolute;
+				height: 500px;
+				width: 800px;
+                top: 0px;
+                left: 500px;
+                z-index: 3;
+                transition: 1s;
+				padding: 0px;
+            }
+			.addfriend1{
+				border: none;
+                position: absolute;
+				height: 500px;
+				width: 500px;
+                top: 50px;
+                left: 475px;
+                z-index: -3;
+                transition: 1s;
+				padding: 0px;
+				box-shadow: 0px 0px 10px 1px grey;
+
+			}
             .feedback{
                 position: absolute;
                 top: -900px;
@@ -408,6 +454,7 @@
 				border:3px solid #2196F3 ;
 
 			}
+			
 
         </style>
 	</body>
