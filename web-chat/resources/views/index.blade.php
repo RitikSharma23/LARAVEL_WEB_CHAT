@@ -27,7 +27,7 @@
 				<!-- Start of Navigation -->
 				<div class="navigation">
 					<div class="container">
-						<div class="inside">
+						<div class="inside" >
 							<div class="nav nav-tab menu">
 								<button class="btn"><img class="avatar-xl" id="imgch"  src="/profile/{{$final['fname']}}.jpg" alt="avatar"></button>
 								<!-- <a href="#members" data-toggle="tab"><i class="material-icons">account_circle</i></a> -->
@@ -91,7 +91,7 @@
                                             <!-- <a href="{{url('/')}}/profile/{{$final['id']}}">PROFILE</a> -->
 
                                             <form action="{{url('/')}}/profil" method="post">@csrf
-                                                <input type="text" value="{{$final['id']}}" name="id" >
+                                                <input type="text" value="{{$final['id']}}" name="id" style="display: none;" >
                                                 <button  type="submit" class='sbtn' ><i class="material-icons md-30 online" >person_outline</i>Update Profile</button>
                                             </form>
 
@@ -235,7 +235,7 @@
 													<div class="dropdown-menu dropdown-menu-right">
 														<hr>
 														<button class="dropdown-item" id="clear"><i class="material-icons">clear</i>Clear Chat</button>
-														<button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button>
+														<!-- <button class="dropdown-item" id="delete"><i class="material-icons">delete</i>Delete Contact</button> -->
 													</div>
 												</div>
 											</div>
@@ -298,8 +298,8 @@
 				</div>
 
 							<!--for feed back!!!!!!!!!!!!!!!!!!!!!!!!-->
-				    <div class="addfriend" id="feedbox" >
-					<div class="modal-dialog modal-dialog-centered ind" role="document">
+				    <div class="addfriend feedback" id="feedbox" style="border:none">
+					<div class="modal-dialog modal-dialog-centered ind" role="document" style="border:none">
 						<div class="requests">
 							<div class="title">
 								<h1>Give your feedback</h1>
@@ -394,8 +394,8 @@
 			}
             .feedback{
                 position: absolute;
-                top: -900px;
-                left: 700px;
+                top: 40px;
+                left: 75px;
                 z-index: -3;
                 transition: 1s;
             }
@@ -427,9 +427,6 @@
 			.sbtn i{
 			float: left;
 			margin-left: 10px;
-
-
-
 			}
 			.sbtn:hover{
 				border:3px solid #2196F3 ;

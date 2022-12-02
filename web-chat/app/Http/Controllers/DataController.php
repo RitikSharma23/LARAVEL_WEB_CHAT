@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserData;
 use Faker\Core\File;
+use GuzzleHttp\Psr7\Response;
+use Illuminate\Auth\Access\Response as AccessResponse;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-
-
+use Psy\VersionUpdater\Downloader;
 
 class DataController extends Controller
 {
@@ -85,7 +86,7 @@ class DataController extends Controller
                 $user=User::all();
                 return view('admin')->with(compact('data','user'));
                 }else{
-                    $message="nouserfound";
+                $message="nouserfound";
                 return view('warning')->with(compact('message'));
                 }
 
@@ -236,27 +237,19 @@ class DataController extends Controller
     }
 
 
-    public function excel()
-    {
+    public function excel(){
+
         $myfile = fopen("result.xls", "w") or die("Unable to open file!");
         fwrite($myfile, 'Token ID' . "\t" . 'Name' . "\t" . 'Phone' . "\t" . 'Email' . "\t" . 'Feedback'. "\n");
 
         $data=UserData::all();
 
         foreach($data as $d){
-
             fwrite($myfile, $d['id'] . "\t" . $d['name']  . "\t" . $d['phone']  . "\t" . $d['email']  . "\t" . $d['complaint'] . "\n");
-
         }
-
-
-        // {
-
-        // fwrite($myfile, $index["fname"] . "\t" . $index["lname"]. "\t" .$index["uid"]."_". "\t" .$index["marks"] . "\n");
-
-        // array_push($result['data'],$index);
-        // }
         fclose($myfile);
 
+        $myFile = public_path("result.xls");
+    	return response()->download($myFile);
     }
 }

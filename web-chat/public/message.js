@@ -376,6 +376,7 @@ document.getElementById("close3").addEventListener("click",()=>{
   var x= document.getElementById("bb").style.zIndex="-3"
   document.getElementById("mainclass").style.filter="blur(0px)"
 })
+
 document.getElementById("close4").addEventListener("click",()=>{
   var x= document.getElementById("db").style.zIndex="-3"
   document.getElementById("mainclass").style.filter="blur(0px)"
