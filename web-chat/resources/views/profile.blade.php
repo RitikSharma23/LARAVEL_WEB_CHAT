@@ -48,11 +48,12 @@
 								<div class="content" style="position:relative;top:-200px">
 									<form class="signup" action="{{url('/')}}/doupdate" method="post" enctype="multipart/form-data">
                                         @csrf
-										<div class="form-parent">
-											<div class="form-group">
+										<div class="form-group cf" >
 												<input type="file" name="image" class="form-control" placeholder="Upload Image" required value="{{$data['fname']}}.jpg">
 
 											</div>
+										<div class="form-parent">
+											
 											<div class="form-group">
 												<input type="text" name="id" class="form-control" placeholder="id" required value="{{$data['id']}}" style="display: none;">
 												<input type="text" name="fname" class="form-control" placeholder="First Name" required value="{{$data['fname']}}">
@@ -104,6 +105,12 @@
 			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
 			scrollToBottom(document.getElementById('content'));
 		</script>
+
+		<style>
+			.cf{
+				position: relative;
+			}
+		</style>
 	</body>
 
 </html>
