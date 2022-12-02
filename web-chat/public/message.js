@@ -403,6 +403,29 @@ document.getElementById("imgch3").addEventListener("click",()=>{
 
 
 
-// document.getElementById("imgch").src="profile/Ritik.jpg"
-// document.getElementById("imgch2").src="profile/Ritik.jpg"
+document.getElementById("conversations").addEventListener("keyup",()=>{
+    a=document.getElementById("conversations").value
+    var elements = document.getElementsByClassName("list-group profile");
+
+    for (var i = 0; i < elements.length; i++) {
+        if(elements[i].getAttribute("id").indexOf(a)>=1){
+        console.log(elements[i].getAttribute("id"))
+        document.getElementById(elements[i].getAttribute("id")).style.display="block"
+        }else{
+        document.getElementById(elements[i].getAttribute("id")).style.display="none"
+
+        if(a==""){document.getElementById(elements[i].getAttribute("id")).style.display="block"}
+        }
+    }
+
+})
+
+
+document.getElementById("conversations").addEventListener("focusout",()=>{
+    var elements = document.getElementsByClassName("list-group profile");
+    for (var i = 0; i < elements.length; i++) {
+        document.getElementById(elements[i].getAttribute("id")).style.display="block"
+        document.getElementById("conversations").value=""
+    }
+})
 
