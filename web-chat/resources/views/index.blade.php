@@ -50,13 +50,14 @@
 								<!-- Start of Contacts -->
 								<div class="tab-pane fade" id="members">
 									<div class="search">
-										<form class="form-inline position-relative">
+										<form  class="form-inline position-relative">
 											<input type="search" class="form-control" id="people" placeholder="Search for people...">
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>
 										<button class="btn create" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">person_add</i></button>
 									</div>
 									<div class="list-group sort">
+										
 
 									</div>
 
