@@ -30,7 +30,7 @@
 
 
 									<div class="discussions" id="dis">
-										<h1>Chats</h1>
+										<h1>Chats</h1> 
 
                                         <a  id="feedbtn" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/internet--web/prejudice/feedback-8.png" >
@@ -48,7 +48,7 @@
 												</div>
 										</a>
                                         <a href="{{url('/')}}/excel"  id="accbtn" class="filterDiscussions all unread single " >
-												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/application/yitao-wireless-icon-library/download-104.png" >
 
 												<div class="data">
 													<h5>Download Feedback Report</h5>
@@ -74,7 +74,31 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
+                                        <a href="sign-in.html"  id="accbtn" class="filterDiscussions all unread single lh" >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/iconpack-1206/logout-48.png" >
 
+												<div class="data">
+													<h5>Logout</h5>
+												</div>
+										</a>
+                                        <!-- <a href="sign-in.html" class="title collapsed">
+													<i class="material-icons md-30 online">power_settings_new</i>
+													<div class="data">
+														<h5>Power Off</h5>
+														<p>Log out of your account</p>
+													</div>
+
+												</a> -->
+                                                <a   id="accbtn2s" class="filterDiscussions all unread single " style="display:none">
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
+
+												<div class="data">
+													<h5>User Accounts</h5>
+												</div>
+										</a>
+
+
+                                        
 
 									</div>
 								</div>
@@ -255,6 +279,10 @@
             #feedbtn,#accbtn,.sbtn:hover{
                 cursor: pointer;
 
+            }
+            .lh:hover{
+                border: 2px solid red;
+                
             }
 
          </style>
