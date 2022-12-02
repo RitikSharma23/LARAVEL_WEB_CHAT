@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserData;
 use Faker\Core\File;
+use FPDF;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Auth\Access\Response as AccessResponse;
 use Illuminate\Contracts\Cache\Store;
@@ -250,6 +251,40 @@ class DataController extends Controller
         fclose($myfile);
 
         $myFile = public_path("result.xls");
-    	return response()->download($myFile);
+
+        require('fpdf.php');
+        $pdf=new FPDF();
+
+        ob_end_clean();
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','', 18);
+
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(37,10,'Token ID',1,0,'C',false);
+$pdf->Cell(37,10,'Name',1,0,'C',false);
+$pdf->Cell(37,10,'Phone',1,0,'C',false);
+$pdf->Cell(37,10,'Email',1,0,'C',false);
+$pdf->Cell(37,10,'Feedback',1,1,'C',false);
+
+        foreach($data as $d){
+$pdf->SetFont('Arial','B',9);
+
+            $pdf->Cell(37,10,$d['id'],1,0,'C',false);
+            $pdf->Cell(37,10,$d['name'],1,0,'C',false);
+            $pdf->Cell(37,10,$d['phone'],1,0,'C',false);
+            $pdf->Cell(37,10,$d['email'],1,0,'C',false);
+            $pdf->Cell(37,10,$d['complaint'],1,1,'C',false);
+
+
+        }
+
+
+        // $pdf->Output('my_file.pdf');
+        $myFile = public_path($pdf->Output('my_file.pdf'));
+        fclose($myfile);
+
+        $pdf->Output();
+    	return response()->download($myFile,'my_file.pdf');
     }
 }
