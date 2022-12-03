@@ -47,13 +47,7 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
-                                        <a href="{{url('/')}}/excel"  id="accbtn" class="filterDiscussions all unread single " >
-												<img class="avatar-md" src="https://icons.veryicon.com/png/o/application/yitao-wireless-icon-library/download-104.png" >
-
-												<div class="data">
-													<h5>Download Feedback Report</h5>
-												</div>
-										</a>
+                                    
                                         <!-- <a  id="prof" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
 
@@ -74,6 +68,36 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
+                                        <!-- download feedback -->
+
+                                        <a href="{{url('/')}}/excel"  id="accbtn" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/construction-tools/supermap-gis-product-dark-color-function-icon/output-pdf-3.png" >
+
+												<div class="data">
+													<h5>Download Feedback (.Pdf)</h5>
+												</div>
+										</a>
+                                        <!-- create backup 
+                                        <a href=""  id="accbtn" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/system/background-system/data-backup-and-recovery.png" >
+
+												<div class="data">
+													<h5>Create Backup (Excel)</h5>
+												</div>
+										</a>
+                                        -->
+                                        
+                                        <!-- upload backup 
+                                        <a href=""  id="accbtn" class="filterDiscussions all unread single " >
+												<img class="avatar-md" src="https://icons.veryicon.com/png/o/commerce-shopping/merchant-product-icon-library/upload-86.png" >
+
+												<div class="data">
+													<h5>Upload Backup</h5>
+												</div>
+										</a>
+                                        -->
+
+
                                         <a href="sign-in.html"  id="accbtn" class="filterDiscussions all unread single lh" >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/iconpack-1206/logout-48.png" >
 
