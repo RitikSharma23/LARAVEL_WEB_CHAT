@@ -48,10 +48,27 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" value="{{old('phone')}}">
+											<input type="number" id="phone" name="phone" class="form-control" placeholder="Phone" value="{{old('phone')}}">
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 											<span class="text-danger">@error('phone'){{$message}}@enderror</span>
 										</div>
+
+										<div class="form-parent" id="ootp" style="display: none;">
+
+
+										<div class="form-group" >
+											<span class="text-success" id="succ"></span>
+											<input type="number" id="otp" name="otp" class="form-control" placeholder="OTP" >
+											<button class="btn icon"><i class="material-icons">local_phone</i></button>
+											<span class="text-danger" id="mess"></span>
+										</div>
+										<div class="form-group">
+                                       <span id="time"></span><button id="resend" disabled style="background-color: white;border: none;">Resend</button>
+										</div>
+
+                                        </div>
+
+
 										<div class="form-group">
 											<input type="email" name="email" class="form-control" placeholder="Email" value="{{old('email')}}">
 											<button class="btn icon"><i class="material-icons">email</i></button>
@@ -67,7 +84,7 @@
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 											<span class="text-danger">@error('cnf_password'){{$message}}@enderror</span>
 										</div>
-										<button type="submit" class="btn button" formaction="{{url('/')}}/register">Register</button>
+										<button type="submit" id="submit" class="btn button" style="background-color: grey;" formaction="{{url('/')}}/register" disabled>Register</button>
 										<div class="callout">
 											<span>Already a member? <a href="{{url('/')}}/loginpage">Login</a></span>
 										</div>
@@ -100,82 +117,153 @@
 		<script>window.jQuery || document.write('<script src="dist/js/vendor/jquery-slim.min.js"><\/script>')</script>
 		<script src="dist/js/vendor/popper.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
-		.modal-confirm {		
-	color: #636363;
-	width: 325px;
-	font-size: 14px;
-}
-.modal-confirm .modal-content {
-	padding: 20px;
-	border-radius: 5px;
-	border: none;
-}
-.modal-confirm .modal-header {
-	border-bottom: none;   
-	position: relative;
-}
-.modal-confirm h4 {
-	text-align: center;
-	font-size: 26px;
-	margin: 30px 0 -15px;
-}
-.modal-confirm .form-control, .modal-confirm .btn {
-	min-height: 40px;
-	border-radius: 3px; 
-}
-.modal-confirm .close {
-	position: absolute;
-	top: -5px;
-	right: -5px;
-}	
-.modal-confirm .modal-footer {
-	border: none;
-	text-align: center;
-	border-radius: 5px;
-	font-size: 13px;
-}	
-.modal-confirm .icon-box {
-	color: #fff;		
-	position: absolute;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	top: -70px;
-	width: 95px;
-	height: 95px;
-	border-radius: 50%;
-	z-index: 9;
-	background: #2196F3;
-	padding: 15px;
-	text-align: center;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-}
-.modal-confirm .icon-box i {
-	font-size: 58px;
-	position: relative;
-	top: 3px;
-}
-.modal-confirm.modal-dialog {
-	margin-top: 80px;
-}
-.modal-confirm .btn {
-	color: #fff;
-	border-radius: 4px;
-	background: #2196F3;
-	text-decoration: none;
-	transition: all 0.4s;
-	line-height: normal;
-	border: none;
-}
-.modal-confirm .btn:hover, .modal-confirm .btn:focus {
-	background: #75a9d4;
-	outline: none;
-}
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
-}
-</style>
+     <style>
+                .modal-confirm {
+            color: #636363;
+            width: 325px;
+            font-size: 14px;
+        }
+        .modal-confirm .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-confirm .modal-header {
+            border-bottom: none;
+            position: relative;
+        }
+        .modal-confirm h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-confirm .form-control, .modal-confirm .btn {
+            min-height: 40px;
+            border-radius: 3px;
+        }
+        .modal-confirm .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        .modal-confirm .modal-footer {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .modal-confirm .icon-box {
+            color: #fff;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #2196F3;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-confirm .icon-box i {
+            font-size: 58px;
+            position: relative;
+            top: 3px;
+        }
+        .modal-confirm.modal-dialog {
+            margin-top: 80px;
+        }
+        .modal-confirm .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #2196F3;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+            background: #75a9d4;
+            outline: none;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+        }
+    </style>
+
+<script>
+    x=""
+    
+    function otp(){
+        document.getElementById("resend").disabled=true
+        document.getElementById("resend").style.color="grey"
+        const xhttp = new XMLHttpRequest(ph,x);
+            xhttp.open("GET", "https://my.zitasms.com/services/send.php?key=7876456203b409148ea99e96523d0bbe757a6a4b&number="+ph+"&message="+x+"&devices=%5B%222446%7C0%22%2C%222446%7C1%22%5D&type=sms&prioritize=0", true);
+            xhttp.send();
+
+            var timeLeft = 60;
+            var elem = document.getElementById('time');
+            var timerId = setInterval(countdown, 1000);
+            function countdown() {
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                doSomething();
+            } else {
+                elem.innerHTML = timeLeft + ' seconds remaining';
+                timeLeft--;
+            }
+            if(timeLeft==0){
+                document.getElementById("resend").disabled=false
+                document.getElementById("resend").style.color="blue"
+            }
+            }
+    }
+    document.getElementById("phone").addEventListener("keyup",()=>{
+
+        if(document.getElementById("phone").value.length==10){
+            x=""
+            document.getElementById("ootp").style.display="block"
+            x = Math.floor((Math.random() * 9999) + 1000);
+            ph=document.getElementById("phone").value
+            document.getElementById("succ").innerHTML="OTP Sent Successfully.."
+            otp(ph,x)
+        }else{
+            document.getElementById("succ").innerHTML=""
+        }
+    })
+
+    document.getElementById("otp").addEventListener("keyup",()=>{
+
+
+        if(document.getElementById("otp").value.length==4){
+            if(document.getElementById("otp").value==x){
+                document.getElementById("submit").style.backgroundColor="#2196f3"
+                document.getElementById("submit").disabled=false
+            document.getElementById("ootp").style.display="none"
+
+            }else{
+                document.getElementById("mess").innerHTML="OTP Not Match"
+            }
+        }else{
+            document.getElementById("mess").innerHTML=""
+        }
+        })
+
+    document.getElementById("resend").addEventListener("click",()=>{
+        x=""
+            document.getElementById("ootp").style.display="block"
+            x = Math.floor((Math.random() * 9999) + 1000);
+            ph=document.getElementById("phone").value
+            document.getElementById("succ").innerHTML="OTP Resent Successfully..."
+            otp(ph,x)
+    })
+
+
+</script>
 	</body>
 
 
