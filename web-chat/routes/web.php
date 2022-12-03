@@ -29,6 +29,7 @@ Route::view('index','index');
 Route::view('password','password');
 Route::post('profil',[DataController::class,'prof']);
 Route::view('about','about');
+Route::view('otppage',[DataController::class,'otp']);
 
 Route::post('register',[DataController::class,'register']);
 Route::post('login',[DataController::class,'login']);
