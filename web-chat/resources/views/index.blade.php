@@ -57,7 +57,7 @@
 										<button class="btn create" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">person_add</i></button>
 									</div>
 									<div class="list-group sort">
-										
+
 
 									</div>
 
@@ -66,7 +66,7 @@
 								<!-- Start of Discussions -->
 								<div id="discussions" class="tab-pane fade active show">
 									<div class="search">
-										<form class="form-inline position-relative">
+										<form class="form-inline position-relative">k
 											<input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>
