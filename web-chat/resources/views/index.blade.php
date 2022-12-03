@@ -66,7 +66,7 @@
 								<!-- Start of Discussions -->
 								<div id="discussions" class="tab-pane fade active show">
 									<div class="search">
-										<form class="form-inline position-relative">k
+										<form class="form-inline position-relative">
 											<input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
 											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
 										</form>

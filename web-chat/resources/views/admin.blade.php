@@ -30,7 +30,7 @@
 
 
 									<div class="discussions" id="dis">
-										<h1>Chats</h1> 
+										<h1>Chats</h1>
 
                                         <a  id="feedbtn" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/internet--web/prejudice/feedback-8.png" >
@@ -47,7 +47,7 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
-                                    
+
                                         <!-- <a  id="prof" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/renrenlawer/account-40.png" >
 
@@ -77,7 +77,7 @@
 													<h5>Download Feedback (.Pdf)</h5>
 												</div>
 										</a>
-                                        <!-- create backup 
+                                        <!-- create backup
                                         <a href=""  id="accbtn" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/system/background-system/data-backup-and-recovery.png" >
 
@@ -86,8 +86,8 @@
 												</div>
 										</a>
                                         -->
-                                        
-                                        <!-- upload backup 
+
+                                        <!-- upload backup
                                         <a href=""  id="accbtn" class="filterDiscussions all unread single " >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/commerce-shopping/merchant-product-icon-library/upload-86.png" >
 
@@ -122,7 +122,7 @@
 										</a>
 
 
-                                        
+
 
 									</div>
 								</div>
@@ -156,9 +156,9 @@
                                     @foreach ($data as $d)
                                     <tr>
                                     <th>{{$d['id']}}</th>
-                                    <th>{{$d['fname']}}</th>
-                                    <th>{{$d['email']}}</th>
+                                    <th>{{$d['name']}}</th>
                                     <th>{{$d['phone']}}</th>
+                                    <th>{{$d['email']}}</th>
                                     <th><div class="feed">{{$d['complaint']}}</div></th>
                                     <th><form action="{{url('/')}}/feeddelete" method="post">@csrf<input type="text" name="token" value="{{$d['id']}}" style="display:none;"><button type="submit" style="border:none;background-color:white;color:red">Delete</button></form></th>
                                     </tr>
@@ -306,7 +306,7 @@
             }
             .lh:hover{
                 border: 2px solid red;
-                
+
             }
 
          </style>
