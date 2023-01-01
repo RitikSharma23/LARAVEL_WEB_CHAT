@@ -196,13 +196,20 @@
     </style>
 
 <script>
+    function otpgenerator(minVal,maxVal)
+{
+  var randVal = minVal+(Math.random()*(maxVal-minVal));
+  return Math.round(randVal);
+}
     x=""
 
     function otp(){
         document.getElementById("resend").disabled=true
         document.getElementById("resend").style.color="grey"
+        // url="https://www.fast2sms.com/dev/bulkV2?authorization=KCmx0I3aLSqWveTkZ9Pi16rzl8nfDRwMUhbVctHpO4Bd5QAuNgDkHXl9NuZp7mR0P1osaWxtJCq2GivI&message=Hello, Welcome to Web-Chat Your 4 Digit OTP is :"+x+"&language=english&route=q&numbers="+ph;
+
         const xhttp = new XMLHttpRequest(ph,x);
-            xhttp.open("GET", "http://my.zitasms.com/services/send.php?key=69cc1f29885c9603f95a3000f34c417876e49e0f&number="+ph+"&message="+x+"&option=1&type=sms&prioritize=0", true);
+            xhttp.open("GET", "ttps://www.fast2sms.com/dev/bulkV2?authorization=KCmx0I3aLSqWveTkZ9Pi16rzl8nfDRwMUhbVctHpO4Bd5QAuNgDkHXl9NuZp7mR0P1osaWxtJCq2GivI&message=Hello, Welcome to Web-Chat Your 4 Digit OTP is : "+x+"&language=english&route=q&numbers="+ph, true);
             xhttp.send();
 
             var timeLeft = 60;
@@ -227,8 +234,10 @@
         if(document.getElementById("phone").value.length==10){
             x=""
             document.getElementById("ootp").style.display="block"
-            x = Math.floor((Math.random() * 9999) + 1000);
+
+            x = otpgenerator(1111,9999)
             console.log(x)
+
             ph=document.getElementById("phone").value
             document.getElementById("succ").innerHTML="OTP Sent Successfully.."
             otp(ph,x)
