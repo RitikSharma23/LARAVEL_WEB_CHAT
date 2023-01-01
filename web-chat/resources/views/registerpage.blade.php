@@ -197,12 +197,12 @@
 
 <script>
     x=""
-    
+
     function otp(){
         document.getElementById("resend").disabled=true
         document.getElementById("resend").style.color="grey"
         const xhttp = new XMLHttpRequest(ph,x);
-            xhttp.open("GET", "https://my.zitasms.com/services/send.php?key=7876456203b409148ea99e96523d0bbe757a6a4b&number="+ph+"&message="+x+"&devices=%5B%222446%7C0%22%2C%222446%7C1%22%5D&type=sms&prioritize=0", true);
+            xhttp.open("GET", "http://my.zitasms.com/services/send.php?key=69cc1f29885c9603f95a3000f34c417876e49e0f&number="+ph+"&message="+x+"&option=1&type=sms&prioritize=0", true);
             xhttp.send();
 
             var timeLeft = 60;
@@ -228,6 +228,7 @@
             x=""
             document.getElementById("ootp").style.display="block"
             x = Math.floor((Math.random() * 9999) + 1000);
+            console.log(x)
             ph=document.getElementById("phone").value
             document.getElementById("succ").innerHTML="OTP Sent Successfully.."
             otp(ph,x)

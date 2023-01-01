@@ -15,9 +15,23 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Psy\VersionUpdater\Downloader;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportUser;
+use App\Exports\ExportUser;
 class DataController extends Controller
 {
+
+    public function import(Request $request){
+        Excel::import(new ImportUser, $request->file('file')->store('files'));
+        return redirect()->back();
+    }
+
+    public function exportUsers(Request $request){
+        return Excel::download(new ExportUser, 'users.xlsx');
+    }
+
+
+
     public function register(Request $request){
         $request->validate([
             'fname'=>'required|alpha',
@@ -30,6 +44,8 @@ class DataController extends Controller
 
         $data=User::all();
         $final="";
+
+
         foreach ($data as $d){
             if($d['phone']==$request['phone']){
                 $final=User::find($d['id']);break;
@@ -57,6 +73,8 @@ class DataController extends Controller
 
     }
 
+
+
     public function login(Request $request){
         $request->validate([
             'phone'=>'required|numeric|max_digits:10|min_digits:10',
@@ -81,7 +99,7 @@ class DataController extends Controller
                 $message="wrongpassword";
                 return view('warning')->with(compact('message'));
             }
-            }else if($final['active']==3 ){
+            }else if($final['active']=="3" ){
                 if(Auth::attempt($request->only('phone','password'))){
                 $data=UserData::all();
                 $user=User::all();
@@ -112,8 +130,10 @@ class DataController extends Controller
     }
 
     public function doupdate(Request $request){
+        if($request['file']!=null){
+            $request->image->move(public_path('profile'),$request['fname'].".jpg");
+        }
 
-        $request->image->move(public_path('profile'),$request['fname'].".jpg");
 
         if(Auth::check()){
             $data=User::find($request['id']);
@@ -137,7 +157,6 @@ class DataController extends Controller
     public function log() {
         // Session::flush();
         Auth::logout();
-
         return Redirect('home');
     }
 
@@ -285,4 +304,16 @@ class DataController extends Controller
         return response()->download($myFile);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }

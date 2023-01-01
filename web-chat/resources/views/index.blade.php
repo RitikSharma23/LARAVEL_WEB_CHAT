@@ -13,6 +13,11 @@
 		<!-- Favicon -->
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
         <link rel="stylesheet" href="message.css">
+        <script>
+            if("{{$final['phone']}}"==null){
+                alert("please Login")
+            }
+        </script>
 	</head>
 	<body >
 		 <!-- for image zoom -->
@@ -36,7 +41,7 @@
 
 								<a href="#settings" data-toggle="tab"><i class="material-icons">settings</i></a>
                                 <a href="" data-toggle="tab" ><i id="person" class="material-icons">person_add</i></a>
-								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+								<button class="btn power" id="logout"><i class="material-icons">power_settings_new</i></button>
 							</div>
 						</div>
 					</div>
@@ -352,9 +357,11 @@
 			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
 			scrollToBottom(document.getElementById('content'));
 
-            document.getElementById("myaccount").addEventListener("click",()=>{
-                // alert("laskdh")
-            })
+
+            var pathArray = window.location.pathname.split('/');
+            if(pathArray[1]=="feedback"){
+                history.back()
+            }
 		</script>
 		  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="message.js"></script>

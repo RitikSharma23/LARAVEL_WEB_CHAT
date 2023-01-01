@@ -12,6 +12,7 @@
 		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
 		<!-- Favicon -->
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+
 	</head>
 	<body>
 		<main>
@@ -49,11 +50,11 @@
 									<form class="signup" action="{{url('/')}}/doupdate" method="post" enctype="multipart/form-data">
                                         @csrf
 										<div class="form-group cf" >
-												<input type="file" name="image" class="form-control" placeholder="Upload Image" required value="{{$data['fname']}}.jpg">
+												<input type="file" name="image" class="form-control" placeholder="Upload Image"  value="{{$data['fname']}}.jpg">
 
 											</div>
 										<div class="form-parent">
-											
+
 											<div class="form-group">
 												<input type="text" name="id" class="form-control" placeholder="id" required value="{{$data['id']}}" style="display: none;">
 												<input type="text" name="fname" class="form-control" placeholder="First Name" required value="{{$data['fname']}}">
@@ -80,7 +81,7 @@
 											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" value="">
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
-										<button type="submit" class="btn button" formaction="{{url('/')}}/doupdate" enctype="multipart/form-data">Update Profile</button>
+										<button type="submit" id="submit" class="btn button" formaction="{{url('/')}}/doupdate" enctype="multipart/form-data">Update Profile</button>
 										<div class="callout">
 										</div>
 									</form>
@@ -102,8 +103,11 @@
 		<script src="dist/js/swipe.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
 		<script>
-			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
-			scrollToBottom(document.getElementById('content'));
+
+            var pathArray = window.location.pathname.split('/');
+            if(pathArray[1]=="doupdate"){
+                history.back()
+            }
 		</script>
 
 		<style>

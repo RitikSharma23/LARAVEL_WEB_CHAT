@@ -429,3 +429,13 @@ document.getElementById("conversations").addEventListener("focusout",()=>{
     }
 })
 
+document.getElementById("logout").addEventListener("click",()=>{
+    if (confirm("Do You Want To Logout") == true) {
+        location.replace("http://127.0.0.1:8000")
+      } else {
+      }
+
+})
+
+
+

@@ -46,3 +46,11 @@ Route::post('find',[DataController::class,'find']);
 Route::post('resetpass',[DataController::class,'resetpass']);
 Route::get('excel',[DataController::class,'excel']);
 
+
+
+
+
+Route::get('/file-import',[DataController::class,'importView'])->name('import-view');
+Route::post('/import',[DataController::class,'import'])->name('import');
+Route::get('/export-users',[DataController::class,'exportUsers'])->name('export-users');
+
