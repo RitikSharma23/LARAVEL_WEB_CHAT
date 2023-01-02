@@ -401,8 +401,6 @@ document.getElementById("imgch3").addEventListener("click",()=>{
 })
 
 
-
-
 document.getElementById("conversations").addEventListener("keyup",()=>{
     a=document.getElementById("conversations").value
     var elements = document.getElementsByClassName("list-group profile");

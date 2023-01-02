@@ -248,12 +248,15 @@
 		<script src="dist/js/swipe.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
 		<script>
-			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
-			scrollToBottom(document.getElementById('content'));
 
-            document.getElementById("myaccount").addEventListener("click",()=>{
-                // alert("laskdh")
-            })
+            var pathArray = window.location.pathname.split('/');
+            console.log(pathArray)
+            if(pathArray[1]=="feeddelete"){
+                history.back()
+                location.reload();
+            }
+
+
 		</script>
         <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script>

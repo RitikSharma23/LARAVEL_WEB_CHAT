@@ -26,6 +26,7 @@ class DataController extends Controller
         return redirect()->back();
     }
 
+
     public function exportUsers(Request $request){
         return Excel::download(new ExportUser, 'users.xlsx');
     }
