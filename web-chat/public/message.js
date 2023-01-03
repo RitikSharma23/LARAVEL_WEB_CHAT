@@ -102,10 +102,6 @@ function timeconvert(timeEpoch, offset){
 
 me=document.getElementById('udetail').innerHTML;
 me=me.replace(".","_")
-// user="8866892314@Ritik Sharma@profile_png"
-// me="112231212@Vrutik Jagad@profile_png"
-// me="ritik"
-// user="shanu"
 
 
 const firebaseConfig = {
@@ -120,7 +116,6 @@ const firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
-
 
 
     firebase.database().ref(me+'/').once('value',function(snapshot) {
@@ -142,8 +137,6 @@ const firebaseConfig = {
 
 
 
-
-// firebase.database().ref(me+'/').set("")
 
 
 
@@ -177,7 +170,6 @@ uimage="profile/"+image
           var childData = childSnapshot.val();
 
         tt=timeconvert(parseInt(childKey.slice(0,13)),+5.50)
-
 
           if(childKey[(childKey.length)-1]=="R"){
             tt=timeconvert(parseInt(childKey.slice(0,13)),+5.50)
@@ -293,7 +285,9 @@ firebase.database().ref('/').once('value',function(snapshot) {
      if(me==childKey){m=1}
 
    });
-   if(m==1){}else{firebase.database().ref(me+'/').set("")}
+   if(m==1){}else{
+   location.reload();
+    firebase.database().ref(me+'/').set("")}
  })
 
 
@@ -435,5 +429,10 @@ document.getElementById("logout").addEventListener("click",()=>{
 
 })
 
+database=firebase.database()
 
+// database.ref("8866892314@Ritik Sharma@Ritik_jpg").once("value", function(snapshot) {
+//     database.ref("ritikdata").set(snapshot.val());
+//     snapshot.ref.remove();
+// });
 

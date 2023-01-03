@@ -18,6 +18,8 @@ use Psy\VersionUpdater\Downloader;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ImportUser;
 use App\Exports\ExportUser;
+use Illuminate\Support\Facades\Storage;
+
 class DataController extends Controller
 {
 
@@ -131,13 +133,20 @@ class DataController extends Controller
     }
 
     public function doupdate(Request $request){
-        if($request['file']!=null){
+
+         if($request->image!=null){
             $request->image->move(public_path('profile'),$request['fname'].".jpg");
-        }
+
+    }
+
 
 
         if(Auth::check()){
-            $data=User::find($request['id']);
+        $data=User::find($request['id']);
+
+        rename("C:/Users/ritik/OneDrive/Desktop/LARAVEL_web_CHATTING/LARAVEL_web_CHATTING/LARAVEL CHATTING/web-chat/public/profile/".$data['fname'].".jpg","C:/Users/ritik/OneDrive/Desktop/LARAVEL_web_CHATTING/LARAVEL_web_CHATTING/LARAVEL CHATTING/web-chat/public/profile/".$request['fname'].".jpg");
+
+
         $data->fname=$request['fname'];
         $data->lname=$request['lname'];
         $data->email=$request['email'];

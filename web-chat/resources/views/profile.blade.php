@@ -12,6 +12,7 @@
 		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
 		<!-- Favicon -->
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 	</head>
 	<body>
@@ -47,7 +48,7 @@
 						<div class="container">
 							<div class="col-md-12">
 								<div class="content" style="position:relative;top:-200px">
-									<form class="signup" action="{{url('/')}}/doupdate" method="post" enctype="multipart/form-data">
+									<form class="signup" id="formupdate" action="{{url('/')}}/doupdate" method="post" enctype="multipart/form-data">
                                         @csrf
 										<div class="form-group cf" >
 												<input type="file" name="image" class="form-control" placeholder="Upload Image"  value="{{$data['fname']}}.jpg">
@@ -57,31 +58,31 @@
 
 											<div class="form-group">
 												<input type="text" name="id" class="form-control" placeholder="id" required value="{{$data['id']}}" style="display: none;">
-												<input type="text" name="fname" class="form-control" placeholder="First Name" required value="{{$data['fname']}}">
+												<input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required value="{{$data['fname']}}">
 												<button class="btn icon"><i class="material-icons">person_outline</i></button>
 											</div>
 											<div class="form-group">
-												<input type="text" name="lname" class="form-control" placeholder="Last Name" required value="{{$data['lname']}}">
+												<input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required value="{{$data['lname']}}">
 												<button class="btn icon"><i class="material-icons">person_outline</i></button>
 											</div>
 										</div>
 										<div class="form-group">
-											<input type="number" name="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" >
+											<input type="number" name="phone" id="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" >
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 										</div>
 										<div class="form-group">
-											<input type="email" name="email" class="form-control" placeholder="Email" required value="{{$data['email']}}">
+											<input type="email" name="email" id="email" class="form-control" placeholder="Email" required value="{{$data['email']}}">
 											<button class="btn icon"><i class="material-icons">email</i></button>
 										</div>
 										<div class="form-group">
-											<input type="password" name="password" class="form-control" placeholder="Password" value="" >
+											<input type="password" name="password" id="password" class="form-control" placeholder="Password" value="" >
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
 										<div class="form-group">
-											<input type="password" name="cnf_password" class="form-control" placeholder="Confirm Password" value="">
+											<input type="password" name="cnf_password" id="cnf_password" class="form-control" placeholder="Confirm Password" value="">
 											<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 										</div>
-										<button type="submit" id="submit" class="btn button" formaction="{{url('/')}}/doupdate" enctype="multipart/form-data">Update Profile</button>
+										<button id="submitt" class="btn button">Update Profile</buttontype=>
 										<div class="callout">
 										</div>
 									</form>
@@ -108,13 +109,18 @@
             if(pathArray[1]=="doupdate"){
                 history.back()
             }
+
 		</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 		<style>
 			.cf{
 				position: relative;
 			}
 		</style>
+		  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script src="profile.js"></script>
 	</body>
 
 </html>

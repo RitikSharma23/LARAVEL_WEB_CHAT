@@ -33,7 +33,7 @@ Route::view('otppage',[DataController::class,'otp']);
 
 Route::post('register',[DataController::class,'register']);
 Route::post('login',[DataController::class,'login']);
-Route::post('doupdate',[DataController::class,'doupdate']);
+Route::post('doupdate',[DataController::class,'doupdate'])->name('doupdate');
 Route::get('sign-in.html',[DataController::class,'log'])->name('sign-in.html');
 
 Route::post('feedback',[DataController::class,'feedback']);
