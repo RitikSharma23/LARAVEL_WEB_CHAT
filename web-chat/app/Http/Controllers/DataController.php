@@ -25,7 +25,9 @@ class DataController extends Controller
 
     public function import(Request $request){
         Excel::import(new ImportUser, $request->file('file')->store('files'));
-        return redirect()->back();
+        $data=UserData::all();
+                $user=User::all();
+                return view('admin')->with(compact('data','user'));
     }
 
 

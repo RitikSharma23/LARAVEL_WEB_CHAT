@@ -51,7 +51,7 @@
 									<form class="signup" id="formupdate" action="{{url('/')}}/doupdate" method="post" enctype="multipart/form-data">
                                         @csrf
 										<div class="form-group cf" >
-												<input type="file" name="image" class="form-control" placeholder="Upload Image"  value="{{$data['fname']}}.jpg">
+												<input type="file" name="image" class="form-control" placeholder="Upload Image"  value="{{$data['fname']}}.jpg" accept="image/jpg">
 
 											</div>
 										<div class="form-parent">
@@ -66,8 +66,8 @@
 												<button class="btn icon"><i class="material-icons">person_outline</i></button>
 											</div>
 										</div>
-										<div class="form-group">
-											<input type="number" name="phone" id="phone" class="form-control" placeholder="Phone" required value="{{$data['phone']}}" >
+										<div class="form-group" style="display: none;">
+											<input type="number" name="phone" id="phone" class="form-control" placeholder="Phone" required hidden value="{{$data['phone']}}" >
 											<button class="btn icon"><i class="material-icons">local_phone</i></button>
 										</div>
 										<div class="form-group">

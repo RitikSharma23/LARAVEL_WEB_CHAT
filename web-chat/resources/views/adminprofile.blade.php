@@ -97,8 +97,7 @@
 		<script src="dist/js/swipe.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
 		<script>
-			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
-			scrollToBottom(document.getElementById('content'));
+			
 		</script>
 	</body>
 

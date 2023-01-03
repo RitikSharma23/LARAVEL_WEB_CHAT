@@ -57,7 +57,7 @@
 
 
 										</a> -->
-                                        <form action="{{url('/')}}/profil" method="post">@csrf<input type="text" value="4" name="id" style="display:none"><button class="sbtn" type="submit" id="sb"><span class="material-icons">edit</span><span class="us">Update Profile</span></button></form>
+                                        <form action="{{url('/')}}/profil" method="post">@csrf<input type="text" value="1" name="id" style="display:none"><button class="sbtn" type="submit" id="sb"><span class="material-icons">edit</span><span class="us">Update Profile</span></button></form>
 
 
 
@@ -86,16 +86,14 @@
 												</div>
 										</a>
 
-                                        <a href="{{ route('export-users') }}"  id="accbtn" class="filterDiscussions all unread single " >
-												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/cloud-keeper/backup-management.png" >
+                                        <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data"  class="filterDiscussions all unread single " >
+                                            @csrf
 
-												<div class="data">
-													<h5>Create Backup</h5>
+                                                    <input type="file" name="file" id="customFile" class="data"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                                    <label  for="customFile"></label>
+                                            <button style="border: none;border-radius: 10px;background-color: white; margin-top: 15px">Upload</button>
+                                        </form>
 
-												</div>
-
-
-										</a>
 
 
 
@@ -121,11 +119,11 @@
                                         -->
 
 
-                                        <a href="sign-in.html"  id="accbtn" class="filterDiscussions all unread single lh" >
+                                        <a id="logout"  id="accbtn" class="filterDiscussions all unread single lh" >
 												<img class="avatar-md" src="https://icons.veryicon.com/png/o/miscellaneous/iconpack-1206/logout-48.png" >
 
 												<div class="data">
-													<h5>Logout</h5>
+													<h5 >Logout</h5>
 												</div>
 										</a>
                                         <!-- <a href="sign-in.html" class="title collapsed">
@@ -143,10 +141,6 @@
 													<h5>User Accounts</h5>
 												</div>
 										</a>
-
-
-
-
 									</div>
 								</div>
 
@@ -192,12 +186,12 @@
                             </div>
 
                             <div class="account" id="account">
-                            <table class="table">
+                            <table class="table" id="myTable">
                                 <thead class="thead-dark">
                                     <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Phone</th>
+                                    <th scope="col">Phone <input type="number" id="myInput" onkeyup="namesearch()" placeholder="Search" style="margin-left: 30px;"></th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">created_at</th>
@@ -208,10 +202,10 @@
                                     @if ($d['active']!=3)
 
                                     <tr>
-                                    <th>{{$d['id']}}</th>
-                                    <th>{{$d['fname']." ".$d['lname']}}</th>
-                                    <th>{{$d['phone']}}</th>
-                                    <th>{{$d['email']}}</th>
+                                    <td>{{$d['id']}}</td>
+                                    <td>{{$d['fname']." ".$d['lname']}}</td>
+                                    <td>{{$d['phone']}}</td>
+                                    <td>{{$d['email']}}</td>
                                     <th>
                                         @if ($d['active']==0)
                                         <form action="{{url('/')}}/block" method="post">@csrf<input type="text" name="token" value="{{$d['id']}}" style="display:none"><button type="submit" style="border:none;background-color:white;color:green">Active</button></form>
@@ -243,13 +237,7 @@
 			</div> <!-- Layout -->
 
 
-        <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-                    <input type="file" name="file" id="customFile">
-                    <label  for="customFile">Choose file</label>
-            <button>Import Users</button>
-            <a class="btn btn-success" href="{{ route('export-users') }}">Export Users</a>
-        </form>
+
 
 		</main>
 
@@ -290,6 +278,39 @@
                 document.getElementById("feedbtn").style.border="none"
 
             })
+
+            document.getElementById("logout").addEventListener("click",()=>{
+                if (confirm("Do You Want To Logout") == true) {
+                    location.replace("http://127.0.0.1:8000")
+                } else {
+                }
+
+
+            })
+
+
+            function namesearch() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+
+                console.log(tr[i])
+
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+            }
 
 
 
