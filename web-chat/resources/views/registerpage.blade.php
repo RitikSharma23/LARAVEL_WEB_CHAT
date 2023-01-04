@@ -209,7 +209,7 @@
         // url="https://www.fast2sms.com/dev/bulkV2?authorization=KCmx0I3aLSqWveTkZ9Pi16rzl8nfDRwMUhbVctHpO4Bd5QAuNgDkHXl9NuZp7mR0P1osaWxtJCq2GivI&message=Hello, Welcome to Web-Chat Your 4 Digit OTP is :"+x+"&language=english&route=q&numbers="+ph;
 
         const xhttp = new XMLHttpRequest(ph,x);
-            xhttp.open("GET", "ttps://www.fast2sms.com/dev/bulkV2?authorization=KCmx0I3aLSqWveTkZ9Pi16rzl8nfDRwMUhbVctHpO4Bd5QAuNgDkHXl9NuZp7mR0P1osaWxtJCq2GivI&message=Hello, Welcome to Web-Chat Your 4 Digit OTP is : "+x+"&language=english&route=q&numbers="+ph, true);
+            xhttp.open("GET", "https://www.fast2sms.com/dev/bulkV2?authorization=KCmx0I3aLSqWveTkZ9Pi16rzl8nfDRwMUhbVctHpO4Bd5QAuNgDkHXl9NuZp7mR0P1osaWxtJCq2GivI&message=Hello, Welcome to Web-Chat Your 4 Digit OTP is : "+x+"&language=english&route=q&numbers="+ph, true);
             xhttp.send();
 
             var timeLeft = 60;
