@@ -95,7 +95,7 @@ function timeconvert(timeEpoch, offset){
   if(nd.toLocaleString().slice(13,14)==":"){
   return nd.toLocaleString().slice(11,16);
   }else{
-  return nd.toLocaleString().slice(11,17);
+  return nd.toLocaleString().slice(10,17);
   }
 }
 
